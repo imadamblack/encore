@@ -27,6 +27,8 @@ import ico02 from '../../public/landing/ico02.png';
 import ico03 from '../../public/landing/ico03.png';
 import ico04 from '../../public/landing/ico04.png';
 import Faqs from '../components/faqs';
+import  Titulo  from '../components/titulo.js';
+import  Subtitulo  from '../components/subtitulo.js';
 
 
 
@@ -50,6 +52,18 @@ export default function Home() {
   return (
     <>
       <div className=" text-rose-500 text-2xl">Hello Airbnb</div>
+      <Titulo
+        titulo="Oficinas gdl"
+        subtitle="Espacios libres para el trabajo"
+        imgSrc={i00}  
+      />
+      <Subtitulo
+        titulo="Alojamiento entero: condominio"
+        subtitle="Espacios libres para el trabajo"
+        ciudad="Guadalajara"
+        pais="México"
+      />
+
     </>
   );
 }
