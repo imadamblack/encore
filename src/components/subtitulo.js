@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image';
 
-const subtitulo = ({titulo, subtitle, ciudad, pais}) => {
+const subtitulo = ({titulo, ciudad, pais, subtitle}) => {
   return (
     <>
         <div className='max-w-[1390px] mx-auto mt-10 px-[30px] w-full relative' >
@@ -9,21 +9,7 @@ const subtitulo = ({titulo, subtitle, ciudad, pais}) => {
                 <div className="flex flex-col gap-y-6">
                     <h2 className="text-3xl font-nunito font-semibold">{titulo}</h2>
                     <h4 className="text-lg font-nunito">{`${ciudad}, ${pais}`}</h4>
-                    <h4 className="text-lg font-nunito">{subtitle}</h4>
-
-                    {/*hacer un nuevo componente de caracteristicasp beneficios */}
-                    <div className='bg-red-500'>
-                        {/*<ul>
-                            <li>4 huepedes</li>
-                            <li>4 huepedes</li>
-                            <li>4 huepedes</li>
-                            <li>4 huepedes</li>
-                            <li>4 huepedes</li>
-
-
-                        </ul>*/}
-                    </div>
-                    
+                    <h4 className="text-lg font-nunito">{subtitle}</h4>                    
 
                 </div>
             </div>

@@ -31,7 +31,8 @@ import  Titulo  from '../components/titulo.js';
 import  Subtitulo  from '../components/subtitulo.js';
 import  Reserva  from '../components/reserva.js';
 import  Caracteristicas  from '../components/caracteristicas.js';
-
+import  Descriplong  from '../components/descripcion-detallada.js';
+import  Reviews  from '../components/review.js';
 
 export default function Home() {
   const [lastClick, setLastClick] = useState('');
@@ -52,7 +53,7 @@ export default function Home() {
 
   return (
     <>
-      <div className=" text-rose-500 text-2xl">Hello Airbnb</div>
+      
       <Titulo
         titulo="Oficinas gdl"
         subtitle="Espacios libres para el trabajo"
@@ -64,23 +65,39 @@ export default function Home() {
         huespedes={4}
       />
       <Subtitulo
-        titulo="Alojamiento entero: condominio"
-        subtitle="Espacios libres para el trabajo"
+        titulo="Alojamiento"
         ciudad="Guadalajara"
         pais="México"
-      />
+        subtitle=""
+        />
 
       <Caracteristicas
         icono1={<Image src={ico01} alt="Icono 1" />}
         header1="Llegada autónoma"
         description1="Realiza la llegada fácilmente con la cerradura con teclado."
-        icono2={<Image src={ico01} alt="Icono 1" />}
+        icono2={<Image src={ico02} alt="Icono 1" />}
         header2="Excelente ubicación"
         description2="A los huéspedes que se quedaron aquí el año pasado les encantó la ubicación."
-        icono3={<Image src={ico01} alt="Icono 1" />}
+        icono3={<Image src={ico03} alt="Icono 1" />}
         header3="Vistas a la ciudad"
         description3="Los huéspedes dicen que las vistas son espectaculares."
         
+      />
+
+      <Descriplong
+        header="Descripción"
+        description="Acogedor estudio ejecutivo con todos los servicios necesarios para una estancia productiva y confortable. Ubicado en la zona financiera de Guadalajara, estarás cerca de importantes centros como Midtown y Punto Sao Paulo y toda la oferta culinaria que la colonia Providencia tiene para ofrecer. Disfruta de una cocina equipada, un balcón para tomar aire fresco, una sala de juntas y un exclusivo rooftop con vistas panorámicas de la ciudad.
+No contamos con estacionamiento"       
+      />
+      <Reviews
+        user_img={<Image src={i03} alt="Imagen de usuario" />}
+        nombre="Juan Jose"
+        ciudad="Zapopan"
+        pais="México"
+        calificacion="⭐⭐⭐⭐⭐"
+        fecha="Enero 2023"
+        tipo="Viaje de negocios"
+        comentario="Un anfitrión muy receptivo y un lugar genial:) Me hospedaría aquí de nuevo.s"   
       />
       
     </>
