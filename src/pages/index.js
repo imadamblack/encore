@@ -29,7 +29,8 @@ import ico04 from '../../public/landing/ico04.png';
 import Faqs from '../components/faqs';
 import  Titulo  from '../components/titulo.js';
 import  Subtitulo  from '../components/subtitulo.js';
-
+import  Reserva  from '../components/reserva.js';
+import  Caracteristicas  from '../components/caracteristicas.js';
 
 
 export default function Home() {
@@ -57,6 +58,11 @@ export default function Home() {
         subtitle="Espacios libres para el trabajo"
         imgSrc={i00}  
       />
+      <Reserva
+        llegada="10/05/2025"
+        salida="11/05/2025"
+        huespedes={4}
+      />
       <Subtitulo
         titulo="Alojamiento entero: condominio"
         subtitle="Espacios libres para el trabajo"
@@ -64,6 +70,19 @@ export default function Home() {
         pais="México"
       />
 
+      <Caracteristicas
+        icono1={<Image src={ico01} alt="Icono 1" />}
+        header1="Llegada autónoma"
+        description1="Realiza la llegada fácilmente con la cerradura con teclado."
+        icono2={<Image src={ico01} alt="Icono 1" />}
+        header2="Excelente ubicación"
+        description2="A los huéspedes que se quedaron aquí el año pasado les encantó la ubicación."
+        icono3={<Image src={ico01} alt="Icono 1" />}
+        header3="Vistas a la ciudad"
+        description3="Los huéspedes dicen que las vistas son espectaculares."
+        
+      />
+      
     </>
   );
 }
