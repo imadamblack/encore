@@ -1,7 +1,7 @@
 export const info = {
-  legalName: "BLUE HAND S.A. DE C.V.",
-  companyName: "BH Consulting",
-  description: "Certificate en ISO",
+  legalName: "Airbnb",
+  companyName: "3 cuartos Ag",
+  description: "Airbnb",
   email: {
     sender: "",
     recipients: [""],
