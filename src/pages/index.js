@@ -32,7 +32,7 @@ import  Subtitulo  from '../components/subtitulo.js';
 import  Reserva  from '../components/reserva.js';
 import  Caracteristicas  from '../components/caracteristicas.js';
 import  Descriplong  from '../components/descripcion-detallada.js';
-import  Reviews  from '../components/review.js';
+import  ReviewList  from '../components/ReviewList.js';
 
 export default function Home() {
   const [lastClick, setLastClick] = useState('');
@@ -89,7 +89,7 @@ export default function Home() {
         description="Acogedor estudio ejecutivo con todos los servicios necesarios para una estancia productiva y confortable. Ubicado en la zona financiera de Guadalajara, estarás cerca de importantes centros como Midtown y Punto Sao Paulo y toda la oferta culinaria que la colonia Providencia tiene para ofrecer. Disfruta de una cocina equipada, un balcón para tomar aire fresco, una sala de juntas y un exclusivo rooftop con vistas panorámicas de la ciudad.
 No contamos con estacionamiento"       
       />
-      <Reviews
+      <ReviewList
         user_img={<Image src={i03} alt="Imagen de usuario" />}
         nombre="Juan Jose"
         ciudad="Zapopan"
