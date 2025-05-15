@@ -33,6 +33,8 @@ import  Reserva  from '../components/reserva.js';
 import  Caracteristicas  from '../components/caracteristicas.js';
 import  Descriplong  from '../components/descripcion-detallada.js';
 import  ReviewList  from '../components/ReviewList.js';
+import Mapa  from '../components/mapa.js';
+import WeOffer from '../components/WeOffer.js';
 
 export default function Home() {
   const [lastClick, setLastClick] = useState('');
@@ -83,12 +85,16 @@ export default function Home() {
         description3="Los huéspedes dicen que las vistas son espectaculares."
         
       />
+      
 
       <Descriplong
         header="Descripción"
         description="Acogedor estudio ejecutivo con todos los servicios necesarios para una estancia productiva y confortable. Ubicado en la zona financiera de Guadalajara, estarás cerca de importantes centros como Midtown y Punto Sao Paulo y toda la oferta culinaria que la colonia Providencia tiene para ofrecer. Disfruta de una cocina equipada, un balcón para tomar aire fresco, una sala de juntas y un exclusivo rooftop con vistas panorámicas de la ciudad.
 No contamos con estacionamiento"       
       />
+
+      <WeOffer/>
+      
       <ReviewList
         user_img={<Image src={i03} alt="Imagen de usuario" />}
         nombre="Juan Jose"
@@ -99,6 +105,13 @@ No contamos con estacionamiento"
         tipo="Viaje de negocios"
         comentario="Un anfitrión muy receptivo y un lugar genial:) Me hospedaría aquí de nuevo.s"   
       />
+      <Mapa
+      ciudad="Guadalajara"
+      estado="Jalisco"
+      pais="México"
+      comentario="Lapso at Asís se encuentra en la calle Asís, entre Florencia y Verona, en la reconocida Zona Financiera de Guadalajara. Su ubicación es estratégica, a solo unos pasos de importantes avenidas como Adolfo López Mateos y Américas, y a tan solo 2 minutos a pie de Plaza Midtown. Además, se encuentra a 5 minutos en automóvil de Punto Sao Paulo y el Country Club."
+      />
+
       
     </>
   );

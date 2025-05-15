@@ -4,7 +4,7 @@ import Image from 'next/image';
 const ReviewList = () => { // Renombrado el componente para reflejar que renderiza una lista
     const comentarios = [
         {
-            user_img: "/landing/04.png", // Ejemplo con URL
+            user_img: "/img-Comentarios/04.png",
             nombre: "Juan Jose",
             ciudad: "Zapopan",
             pais: "México",
@@ -15,8 +15,8 @@ const ReviewList = () => { // Renombrado el componente para reflejar que renderi
         },
         // Puedes añadir más objetos comentario aquí si hay más
         {
-             user_img: "/public/landing/01.png",
-             nombre: "Maria",
+             user_img: "/img-Comentarios/05.png",
+             nombre: "Maria Cuevas",
              ciudad: "Guadalajara",
              pais: "México",
              calificacion: "⭐⭐⭐⭐",
