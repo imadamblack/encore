@@ -45,7 +45,7 @@ const WeOffer = () => {
                                 src={item.icon} 
                                 alt={`Icono para ${item.descripcion}`} 
                                 layout="fill" // Para que la imagen llene el div contenedor
-                                objectFit="cover" // <-- O 'contain', para que la imagen se ajuste sin deformarse
+                                objectFit="contain" // <-- O 'contain', para que la imagen se ajuste sin deformarse
                             
                             />
                         </div>
