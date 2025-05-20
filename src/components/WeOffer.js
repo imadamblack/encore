@@ -33,7 +33,7 @@ const WeOffer = () => {
 
     return (
         <>
-            <div className='max-w-[1120px] mx-auto mt-10 px-[30px] w-full border-t border-b py-6' >
+            <div className='max-w-[1120px] mx-auto mt-10 px-[30px] w-full  py-6' >
                 <h3 className="text-3xl font-nunito font-semibold">Lo que ofrece este lugar</h3>
 
                 {OfferByPlace.map((item, index) => (

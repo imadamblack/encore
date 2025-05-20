@@ -76,10 +76,10 @@ export default function Home() {
       
       <Calificacion
         titulo="Favorito entre los huespedes"
-        calificacion="4.94"
-        estrellas={"★★★★★"}
-        evaluaciones="197"
         subtitle="Los huéspedes dicen que este lugar es increíble."
+        calificacion={4.94}
+        estrellas="★★★★★"
+        evaluaciones={197}
       />
 
       <Caracteristicas
@@ -92,18 +92,20 @@ export default function Home() {
         icono3={<Image src={ico03} alt="Icono 1" />}
         header3="Vistas a la ciudad"
         description3="Los huéspedes dicen que las vistas son espectaculares."
-        
       />
+      <div className="w-full h-px bg-gray-200"></div> 
       
 
       <Descriplong
         header="Descripción"
         description="Acogedor estudio ejecutivo con todos los servicios necesarios para una estancia productiva y confortable. Ubicado en la zona financiera de Guadalajara, estarás cerca de importantes centros como Midtown y Punto Sao Paulo y toda la oferta culinaria que la colonia Providencia tiene para ofrecer. Disfruta de una cocina equipada, un balcón para tomar aire fresco, una sala de juntas y un exclusivo rooftop con vistas panorámicas de la ciudad.
-No contamos con estacionamiento"       
+        No contamos con estacionamiento"       
       />
 
+      <div className="w-full h-px bg-gray-200"></div> 
+
       <WeOffer/>
-      
+      <div className="w-full h-px bg-gray-200"></div> 
       <ReviewList
         user_img={<Image src={i03} alt="Imagen de usuario" />}
         nombre="Juan Jose"
@@ -114,6 +116,7 @@ No contamos con estacionamiento"
         tipo="Viaje de negocios"
         comentario="Un anfitrión muy receptivo y un lugar genial:) Me hospedaría aquí de nuevo.s"   
       />
+      <div className="w-full h-px bg-gray-200"></div> 
       <Mapa
       ciudad="Guadalajara"
       estado="Jalisco"
