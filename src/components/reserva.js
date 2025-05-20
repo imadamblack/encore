@@ -10,6 +10,7 @@ const Reserva = ({ llegada, salida, huespedes }) => {
   // Inicializamos con las fechas de las props o null
   const [startDate, setStartDate] = useState(llegada ? new Date(llegada) : null);
   const [endDate, setEndDate] = useState(salida ? new Date(salida) : null);
+  const [huespedes, setHuespedes] = useState(huespedes || 1);
 
   // Manejadores de cambio de fecha
   const handleDateChange = (dates) => {
@@ -72,9 +73,30 @@ const Reserva = ({ llegada, salida, huespedes }) => {
               </div>
 
               {/* Campo HUESPEDES - Sin cambios */}
-              <div className="flex-1 text-center p-4 text-xl font-bold h-full relative flex flex-col justify-center items-center">
+              <div className="flex-1 text-center p-2 text-xl font-bold h-full relative flex flex-col justify-center items-center">
                 HUESPEDES
-                <div>{`${huespedes} huespedes`}</div>
+                <div className="flex items-center space-x-1">
+                  <button
+                    onClick={() => setHuespedes(Math.max(1, huespedes - 1))}
+                    className="bg-gray-200 py-0 px-2 rounded"
+                  >
+                    -
+                  </button>
+                  <input
+                    type="number"
+                    min="1"
+                    max="10"
+                    value={huespedes}
+                    onChange={(e) => setHuespedes(Math.min(10, Math.max(1, parseInt(e.target.value) || 1)))}
+                    className="text-center p-0 border-none "
+                  />
+                  <button
+                    onClick={() => setHuespedes(Math.min(10, huespedes + 1))}
+                    className="bg-gray-200 py-0 px-1 rounded"
+                  >
+                    +
+                  </button>
+                </div>
               </div>
           </div>
 
