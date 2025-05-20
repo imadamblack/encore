@@ -35,6 +35,7 @@ import  Descriplong  from '../components/descripcion-detallada.js';
 import  ReviewList  from '../components/ReviewList.js';
 import Mapa  from '../components/mapa.js';
 import WeOffer from '../components/WeOffer.js';
+import Calificacion from '../components/Calificacion.js';
 
 
 export default function Home() {
@@ -71,7 +72,15 @@ export default function Home() {
         ciudad="Guadalajara"
         pais="México"
         subtitle=""
-        />
+      />
+      
+      <Calificacion
+        titulo="Favorito entre los huespedes"
+        calificacion="4.94"
+        estrellas={"★★★★★"}
+        evaluaciones="197"
+        subtitle="Los huéspedes dicen que este lugar es increíble."
+      />
 
       <Caracteristicas
         icono1={<Image src={ico01} alt="Icono 1" />}
