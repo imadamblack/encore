@@ -35,6 +35,7 @@ import  Descriplong  from '../components/descripcion-detallada.js';
 import  ReviewList  from '../components/ReviewList.js';
 import Mapa  from '../components/mapa.js';
 import WeOffer from '../components/WeOffer.js';
+import ImageSlider from '../components/ImageSlider.js';
 
 export default function Home() {
   const [lastClick, setLastClick] = useState('');
@@ -52,10 +53,8 @@ export default function Home() {
   };
 
 
-
   return (
     <>
-      
       <Titulo
         titulo="Oficinas gdl"
         subtitle="Espacios libres para el trabajo"
