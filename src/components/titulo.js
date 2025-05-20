@@ -2,6 +2,7 @@
 import React from 'react';
 // No necesitas importar 'Image' de Next.js si el slider maneja las imágenes
 import ImageSlider from './ImageSlider.js';
+import Galeria from './Galeria.js';
 
 const Titulo = ({ titulo, subtitle }) => { 
   const images = [
@@ -14,7 +15,7 @@ const Titulo = ({ titulo, subtitle }) => {
 
   return (
     <>
-      <div className='max-w-[1390px] mx-auto mt-10 px-[30px] w-full relative'>
+      <div className='max-w-[1120px] mx-auto mt-10 px-[30px] w-full relative'>
         <div className="w-full">
           <div className="flex flex-col gap-y-2">
             <h2 className="text-3xl font-nunito font-semibold">{titulo}</h2>
@@ -24,12 +25,16 @@ const Titulo = ({ titulo, subtitle }) => {
 
         {/* Aquí va el ImageSlider directamente */}
         {/* El contenedor del slider es quien debe definir el tamaño y el overflow */}
-        <div className="w-full h-[60vh] overflow-hidden rounded-xl relative mt-12">
+        <div className="md:hidden w-full h-[45vh] overflow-hidden rounded-xl relative mt-12">
             <ImageSlider
                 images={images}
                 interval={10000}
             />
         </div>
+
+        {/*Carga la Galeria en version en pantallas medianas */}
+        <Galeria
+        />
 
         {/* Si quieres mostrar el contador del slider, puedes pasarlo como prop al ImageSlider
             o manejarlo dentro del ImageSlider mismo si conoces el índice actual.

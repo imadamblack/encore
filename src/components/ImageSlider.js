@@ -1,6 +1,5 @@
-// components/ImageSlider.js
 import React, { useState, useEffect, useRef } from 'react';
-import styles from './ImageSlider.module.css'; // Crearemos este archivo CSS más adelante
+import styles from './ImageSlider.module.css';
 
 const ImageSlider = ({ images, interval = 3000 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -27,6 +26,17 @@ const ImageSlider = ({ images, interval = 3000 }) => {
     };
   }, [currentIndex, images.length, interval]);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setCurrentIndex((prev) => Math.min(prev, images.length - 1));
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [images.length]);
+
   const goToPrevious = () => {
     resetTimeout();
     const isFirstSlide = currentIndex === 0;
@@ -42,39 +52,43 @@ const ImageSlider = ({ images, interval = 3000 }) => {
   };
 
   return (
-    <div className={styles.sliderContainer}>
-      <div
-        className={styles.sliderWrapper}
-        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-      >
-        {images.map((image, index) => (
-          <div key={index} className={styles.slide}>
-            <img src={image.src} alt={image.alt} className={styles.slideImage} />
-            {image.caption && <p className={styles.slideCaption}>{image.caption}</p>}
-          </div>
-        ))}
-      </div>
+    <div className='h-[45vh]'>
+      <div className={styles.sliderContainer}>
+        <div
+          className={styles.sliderWrapper}
+          style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+        >
+          {images.map((image, index) => (
+            <div key={index} className={styles.slide}>
+              <img src={image.src} alt={image.alt} className={styles.slideImage} />
+              {image.caption && <p className={styles.slideCaption}>{image.caption}</p>}
+            </div>
+          ))}
+        </div>
 
-      <div className={styles.dotsContainer}>
-        {images.map((_, index) => (
-          <div
-            key={index}
-            className={`${styles.dot} ${currentIndex === index ? styles.activeDot : ''}`}
-            onClick={() => {
-              resetTimeout();
-              setCurrentIndex(index);
-            }}
-          ></div>
-        ))}
-      </div>
+        <div className={styles.dotsContainer}>
+          {images.map((_, index) => (
+            <div
+              key={index}
+              className={`${styles.dot} ${currentIndex === index ? styles.activeDot : ''}`}
+              onClick={() => {
+                resetTimeout();
+                setCurrentIndex(index);
+              }}
+            ></div>
+          ))}
+        </div>
 
-      <button className={styles.prevButton} onClick={goToPrevious}>
-        &#10094;
-      </button>
-      <button className={styles.nextButton} onClick={goToNext}>
-        &#10095;
-      </button>
-      <span> { currentIndex } | { images.length}</span>
+        <button className={styles.prevButton} onClick={goToPrevious}>
+          &#10094;
+        </button>
+        <button className={styles.nextButton} onClick={goToNext}>
+          &#10095;
+        </button>
+        <div className={styles.indexText}>
+          {currentIndex + 1} / {images.length}
+        </div>
+      </div>
     </div>
   );
 };

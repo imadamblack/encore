@@ -5,7 +5,7 @@ import { FiHome, FiUser} from 'react-icons/fi';
 const caracteristicas = ({icono1, header1, description1, icono2, header2, description2, icono3, header3, description3,}) => {
   return (
     <>
-        <div className='max-w-[1390px] mx-auto mt-10 px-[30px] w-full border-t border-b py-6' >
+        <div className='max-w-[1120px] mx-auto mt-10 px-[30px] w-full border-t border-b py-6' >
             <div className="w-full flex flex-row items-center gap-4 py-4">
                 <div className='p-3 w-[34px]'>{icono1}</div>
                 <div>

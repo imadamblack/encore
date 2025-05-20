@@ -27,7 +27,7 @@ const ReviewList = () => { // Renombrado el componente para reflejar que renderi
     ];
 
     return (
-        <div className='max-w-[1390px] mx-auto mt-10 px-[30px] w-full border-t border-b py-6' >
+        <div className='max-w-[1120px] mx-auto mt-10 px-[30px] w-full border-t border-b py-6' >
             {/* este es el contenedor del elemento de comentarios*/}
 
             {comentarios.map((comentario, index) => ( // Sintaxis corregida y uso de 'comentario'
