@@ -1,7 +1,8 @@
 const mapa = ({ ciudad, estado, pais, comentario }) => {
   return (
     <div className='max-w-[1120px] mx-auto mt-10 px-[30px] w-full py-6'>
-      <div className="text-3xl font-semibold">Ubicacion</div>
+      <div className="text-5xl font-semibold font-nunito pb-4">Dónde vas a estar</div>
+      <div className="text-3xl pb-8">{`${ciudad}, ${estado}, ${pais}`}</div>
       <div className="h-[500px] md:w-[100%] overflow-hidden rounded-3xl">
         {/* Reemplazamos la imagen por el iframe de Google Maps */}
         <iframe
