@@ -1,46 +1,59 @@
 
 import Image from 'next/image'; 
-import ico01 from '../../public/landing/ico01.png'; 
-import ico02 from '../../public/landing/ico02.png';
+import ico01 from '../../public/Iconos/Desayuno.svg'; 
+import ico02 from '../../public/Iconos/Wifi.svg';
+import ico03 from '../../public/Iconos/Cama.svg'; 
+import ico04 from '../../public/Iconos/Estacionamiento.svg';
+import ico05 from '../../public/Iconos/Arte.svg'; 
+import ico06 from '../../public/Iconos/Gym.svg'; 
+import ico07 from '../../public/Iconos/Game.svg'; 
+import ico08 from '../../public/Iconos/Streaming.svg';
 
 const WeOffer = () => {
     const OfferByPlace = [
         {
             icon: ico01, 
-            descripcion: 'Vista al horizonte de la ciudad'
+            descripcion: 'Desayuno buffet en cortesia'
         },
         {
             icon: ico02, 
-            descripcion: 'Cocina'
-        },
-        {icon: ico01,
             descripcion: 'Wifi'
         },
-        {
-            icon: ico02, 
-            descripcion: 'Area para trabajar'
+        {   icon: ico03,
+            descripcion: 'Blackout + menú de almohadas'
         },
         {
-            icon: ico01, 
-            descripcion: 'TV'
+            icon: ico04, 
+            descripcion: 'Estacionamiento gratis'
         },
         {
-            icon: ico02, 
-            descripcion: 'Detector de humo'
+            icon: ico05, 
+            descripcion: 'Arte local en cada habitación'
         },
-        // ... otros elementos
+        {
+            icon: ico06, 
+            descripcion: 'Gimnasio con equipo Life Fitness'
+        },
+        {
+            icon: ico07, 
+            descripcion: 'Game station | Xbox | bar'
+        },
+        {
+            icon: ico08, 
+            descripcion: 'Streaming + USB + Puertos en habitaciones'
+        },
     ];
 
     return (
         <>
             <div className='max-w-[1120px] mx-auto mt-10 px-[30px] w-full  py-6' >
-                <h3 className="text-3xl font-nunito font-semibold">Lo que ofrece este lugar</h3>
+                <h3 className="text-5xl font-nunito font-semibold pb-8">Todo esto viene incluido. Porque así debe ser.</h3>
 
                 {OfferByPlace.map((item, index) => (
                     <div key={index} className="w-full flex flex-row items-center gap-4 py-4">
                         
                         {/* Ajusta w y h según el tamaño deseado para el icono */}
-                        <div className='relative w-[34px] h-[34px] p-0 overflow-hidden rounded bg-gray-100'> 
+                        <div className='relative w-[34px] h-[34px] p-0 overflow-hidden rounded'> 
                             <Image
                                 src={item.icon} 
                                 alt={`Icono para ${item.descripcion}`} 
