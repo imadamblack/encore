@@ -74,7 +74,7 @@ export default function Galeria() {
             onClick={(e) => e.stopPropagation()} // Evita cierre al hacer clic dentro
           >
             {/* Contenedor sticky para el título y el botón de cerrar */}
-            <div className="sticky top-0 left-0 right-0 bg-white z-50 flex justify-between items-center p-4 px-12 shadow rounded-full">
+            <div className="sticky top-0 left-0 right-0 max-w-[1000px] mx-auto bg-white z-50 flex justify-between items-center p-4 px-12 shadow rounded-full">
               <h2 className="text-3xl font-bold font-nunito">Galería Completa</h2>
               <button
                 className="text-3xl font-bold text-gray-600 hover:text-gray-800 transition duration-300 rounded-full w-12 h-12 flex items-center justify-center bg-gray-100 hover:bg-gray-200"
