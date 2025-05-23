@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
-import i00 from '../../public/imgSlider/00.png';
-import i01 from '../../public/imgSlider/01.png';
-import i02 from '../../public/imgSlider/02.png';
-import i03 from '../../public/imgSlider/03.png';
-import i04 from '../../public/imgSlider/04.png';
+import i00 from '../../public/imgSlider/00.webp';
+import i01 from '../../public/imgSlider/01.webp';
+import i02 from '../../public/imgSlider/02.webp';
+import i03 from '../../public/imgSlider/03.webp';
+import i04 from '../../public/imgSlider/04.webp';
+import i05 from '../../public/imgSlider/05.webp';
+import i06 from '../../public/imgSlider/05.webp';
 
 export default function Galeria() {
   const [mostrarGaleria, setMostrarGaleria] = useState(false);
-  const imagenes = [i00, i01, i02, i03, i04]; // Todas las imágenes
+  const imagenes = [i00, i01, i02, i03, i04, i05, i06]; // Todas las imágenes
 
   return (
     <>
