@@ -4,13 +4,13 @@ const ReviewList = () => {
     const comentarios = [
         {
             user_img: "/img-Comentarios/01.png",
-            nombre: "Juan Jose",
-            ciudad: "Zapopan",
-            pais: "México",
+            nombre: "Mauro T",
+            ciudad: "",
+            pais: "Tripadvisor",
             calificacion: "⭐⭐⭐⭐⭐",
-            fecha: "Enero 2023",
+            fecha: "Hace un Mes",
             tipo: "Viaje de negocios",
-            comentario: "Un anfitrión muy receptivo y un lugar genial :) Me hospedaría aquí de nuevo."
+            comentario: "Todo Exelente, el trato del recepcionista Ricardo, la atencion y el cuarto. La habitacion limpia, comada, el espacio bien. Las instalaciones del hotel bien, aun no pruebo la comida pero me imagino que todo estasra bien a lo que vi. Graccias Encore"
         },
         {
             user_img: "/img-Comentarios/02.png",
@@ -47,6 +47,7 @@ const ReviewList = () => {
     return (
         <div className='max-w-[1120px] mx-auto mt-10 px-[30px] w-full py-6'>
             {/* Contenedor grid para 2 columnas en PC y 1 en móvil */}
+            <div className='text-5xl font-bold font-nunito pb-4'>Calificaciones de huéspedes que no eligen cualquier hotel</div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {comentarios.map((comentario, index) => (
                     <div key={`com-${index}`} className="bg-white p-6 rounded-lg ">
