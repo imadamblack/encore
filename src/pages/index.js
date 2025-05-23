@@ -58,8 +58,8 @@ export default function Home() {
     <>
       
       <Titulo
-        titulo="Habitaciones dobles GDL"
-        subtitle="habitaciones con cama king size, cocina equipada y balcón privado"
+        titulo="Ramada Encore es todo lo que esperas de un hotel"
+        subtitle="Ramada Encore by Wyndham"
         imgSrc={i00}  
       />
       <Reserva
@@ -68,7 +68,7 @@ export default function Home() {
         huespedes={4}
       />
       <Subtitulo
-        titulo="Alojamiento"
+        titulo="Con el respaldo de quienes sí saben de hospitalidad"
         ciudad="Guadalajara"
         pais="México"
         subtitle=""
@@ -97,9 +97,24 @@ export default function Home() {
       
 
       <Descriplong
-        header="Descripción"
-        description="Acogedor estudio ejecutivo con todos los servicios necesarios para una estancia productiva y confortable. Ubicado en la zona financiera de Guadalajara, estarás cerca de importantes centros como Midtown y Punto Sao Paulo y toda la oferta culinaria que la colonia Providencia tiene para ofrecer. Disfruta de una cocina equipada, un balcón para tomar aire fresco, una sala de juntas y un exclusivo rooftop con vistas panorámicas de la ciudad.
-        No contamos con estacionamiento"       
+        header="Ramada Encore by Wyndham"
+        description="Es para quienes quieren dormir bien, moverse sin perder tiempo y encontrar diseño,
+                          arte y funcionalidad sin pagar extra
+                          por cada detalle.
+                          Es una cadena de hoteles ejecutivos,
+                          sí. Pero con alma local, con actitud
+                          relajada, con eficiencia real y con
+                          espacios pensados para vivir y no
+                          solo para dormir.
+                          Cada sede vibra distinto: murales
+                          de artistas locales, música que te
+                          acompaña y estación de huevos para
+                          que desayunes rico.
+                          No importa si viajas por trabajo, por
+                          un evento, por una feria o por placer.
+                          En Ramada Encore te mueves como
+                          quieres, duermes como necesitas y
+                          conectas con la ciudad de verdad."       
       />
 
       <div className="w-full h-px bg-gray-200"></div> 
@@ -107,21 +122,14 @@ export default function Home() {
       <WeOffer/>
       <div className="w-full h-px bg-gray-200"></div> 
       <ReviewList
-        user_img={<Image src={i03} alt="Imagen de usuario" />}
-        nombre="Juan Jose"
-        ciudad="Zapopan"
-        pais="México"
-        calificacion="⭐⭐⭐⭐⭐"
-        fecha="Enero 2023"
-        tipo="Viaje de negocios"
-        comentario="Un anfitrión muy receptivo y un lugar genial:) Me hospedaría aquí de nuevo.s"   
+         
       />
       <div className="w-full h-px bg-gray-200"></div> 
       <Mapa
-      ciudad="Guadalajara"
+      ciudad="Guadalajara Sur"
       estado="Jalisco"
-      pais="México"
-      comentario="Lapso at Asís se encuentra en la calle Asís, entre Florencia y Verona, en la reconocida Zona Financiera de Guadalajara. Su ubicación es estratégica, a solo unos pasos de importantes avenidas como Adolfo López Mateos y Américas, y a tan solo 2 minutos a pie de Plaza Midtown. Además, se encuentra a 5 minutos en automóvil de Punto Sao Paulo y el Country Club."
+      pais="La Gourmetería"
+      comentario="Este hotel informal se encuentra en un edificio luminoso junto a la carretera 80, a 11 km del centro de convenciones Expo Guadalajara y a 21 km del Aeropuerto Internacional Miguel Hidalgo y Costilla."
       />
 
       
