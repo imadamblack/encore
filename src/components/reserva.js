@@ -29,7 +29,7 @@ const Reserva = ({ llegada, salida, huespedes }) => {
       <div className="max-w-[1120px] mx-auto mt-10 px-[30px] w-full relative">
         <div className="w-full flex flex-wrap sm:flex-nowrap flex-row justify-between items-center h-auto sm:h-[70px]">
           <div className="w-full sm:w-auto sm:flex-1 mt-4 sm:mt-0 mx-4 text-xl font-bold text-center">
-            AGREGA LAS FECHAS PARA VER LOS PRECIOS
+            Reserva tu habitación en segundos Fácil, rápido y sin complicaciones.
           </div>
           <div className='w-full md:w-[70%] flex flex-wrap sm:flex-nowrap flex-row justify-between items-center h-auto sm:h-[60px] shadow border rounded-full'>
             {/* Campo LLEGADA */}
