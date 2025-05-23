@@ -7,10 +7,33 @@ import i03 from '../../public/imgSlider/03.webp';
 import i04 from '../../public/imgSlider/04.webp';
 import i05 from '../../public/imgSlider/05.webp';
 import i06 from '../../public/imgSlider/05.webp';
+import i07 from '../../public/imgSlider/07.webp';
+import i08 from '../../public/imgSlider/08.webp';
+import i09 from '../../public/imgSlider/09.webp';
+import i10 from '../../public/imgSlider/10.webp';
+import i11 from '../../public/imgSlider/11.webp';
+import i12 from '../../public/imgSlider/12.webp';
+import i13 from '../../public/imgSlider/13.webp';
+import i14 from '../../public/imgSlider/14.webp';
+import i15 from '../../public/imgSlider/15.webp';
+import i16 from '../../public/imgSlider/16.webp';
+import i17 from '../../public/imgSlider/17.webp';
+import i18 from '../../public/imgSlider/18.webp';
+import i19 from '../../public/imgSlider/19.webp';
+import i20 from '../../public/imgSlider/20.webp';
+import i21 from '../../public/imgSlider/21.webp';
+import i22 from '../../public/imgSlider/22.webp';
+import i23 from '../../public/imgSlider/23.webp';
+import i24 from '../../public/imgSlider/24.webp';
+import i25 from '../../public/imgSlider/25.webp';
+import i26 from '../../public/imgSlider/26.webp';
+import i27 from '../../public/imgSlider/27.webp';
+
+
 
 export default function Galeria() {
   const [mostrarGaleria, setMostrarGaleria] = useState(false);
-  const imagenes = [i00, i01, i02, i03, i04, i05, i06]; // Todas las imágenes
+  const imagenes = [i00, i01, i02, i03, i04, i05, i06, i07, i08, i09, i10, i11, i12, i13, i14, i15, i16, i17, i18, i19, i20, i21, i22, i23, i24, i25, i26, i27];// Todas las imágenes
 
   return (
     <>
