@@ -38,10 +38,10 @@ export default function Galeria() {
   return (
     <>
       {/* Contenedor principal */}
-      <div className="w-full h-[50vh] max-w-[1120px] mx-auto px-[5px] hidden md:flex flex-col md:flex-row overflow-hidden mt-12 gap-3 relative">
+      <div className="w-full h-[60vh] max-w-[1120px] mx-auto px-[5px] hidden md:flex flex-col md:flex-row overflow-hidden mt-12 gap-3 relative">
 
         {/* Columna Izquierda */}
-        <div className="w-full md:flex-1 bg-gray-50 p-4 sm:h-[50vh] flex items-center justify-center text-white text-2xl sm:rounded-3xl md:rounded-l-3xl relative h-full group">
+        <div className="w-full md:flex-1 bg-gray-50 p-4 flex items-center justify-center text-white text-2xl sm:rounded-3xl md:rounded-l-3xl relative h-full group">
           <Image
             src={i00}
             alt="Imagen principal de la galería"
