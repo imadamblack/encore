@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { DataAtlas } from '../../DataAtlas.js';
 import Blockbuster from '../components/blockbuster';
 import ImageGrid  from '../components/imagegrid.js';
 import Link from 'next/link';
@@ -53,84 +54,89 @@ export default function Home() {
     description: 'Programa una consultoría y diagnóstico de tu negocio gratuitos',
   };
 
+  const fechaActual = new Date()
+  const formatDate = fechaActual.toISOString().split('T')[0];
+  console.log(fechaActual);
+  console.log(formatDate);
+
 
   return (
     <>
-      
+      <div className='mt-[80px]'></div>
       <Titulo
-        titulo="Ramada Encore es todo lo que esperas de un hotel"
+        titulo={DataAtlas.sede}
         subtitle="Ramada Encore by Wyndham"
-        imgSrc={i00}  
-      />
-      <Reserva
-        llegada="10/05/2025"
-        salida="11/05/2025"
-        huespedes={4}
-      />
-      <Subtitulo
-        titulo="Con el respaldo de quienes sí saben de hospitalidad"
-        ciudad="Guadalajara"
-        pais="México"
-        subtitle=""
-      />
-      
-      <Calificacion
-        titulo="Favorito entre los huespedes"
-        subtitle="Los huéspedes dicen que este lugar es increíble."
-        calificacion={4.94}
-        estrellas="★★★★★"
-        evaluaciones={197}
-      />
-
-      <Caracteristicas
-        icono1={<Image src={ico01} alt="Icono 1" />}
-        header1="Llegada autónoma"
-        description1="Realiza la llegada fácilmente con la cerradura con teclado."
-        icono2={<Image src={ico02} alt="Icono 1" />}
-        header2="Excelente ubicación"
-        description2="A los huéspedes que se quedaron aquí el año pasado les encantó la ubicación."
-        icono3={<Image src={ico03} alt="Icono 1" />}
-        header3="Vistas a la ciudad"
-        description3="Los huéspedes dicen que las vistas son espectaculares."
-      />
-      <div className="w-full h-px bg-gray-200"></div> 
-      
-
-      <Descriplong
-        header="Ramada Encore by Wyndham"
-        description="Es para quienes quieren dormir bien, moverse sin perder tiempo y encontrar diseño,
-                          arte y funcionalidad sin pagar extra
-                          por cada detalle.
-                          Es una cadena de hoteles ejecutivos,
-                          sí. Pero con alma local, con actitud
-                          relajada, con eficiencia real y con
-                          espacios pensados para vivir y no
-                          solo para dormir.
-                          Cada sede vibra distinto: murales
-                          de artistas locales, música que te
-                          acompaña y estación de huevos para
-                          que desayunes rico.
-                          No importa si viajas por trabajo, por
-                          un evento, por una feria o por placer.
-                          En Ramada Encore te mueves como
-                          quieres, duermes como necesitas y
-                          conectas con la ciudad de verdad."       
-      />
-
-      <div className="w-full h-px bg-gray-200"></div> 
-
-      <WeOffer/>
-      <div className="w-full h-px bg-gray-200"></div> 
-      <ReviewList
          
       />
+      <div className="max-w-[1120px] mx-auto mt-5 md:flex pb-10">
+        <div className="md:w-[65%]">
+            
+            <Subtitulo
+              titulo="Con el respaldo de quienes sí saben de hospitalidad"
+              ciudad={DataAtlas.ciudad}
+              pais={DataAtlas['pais']}
+              subtitle=""
+              />
+            
+            <Calificacion
+              titulo="Favorito entre los huespedes"
+              subtitle="Los huéspedes dicen que este lugar es increíble."
+              calificacion={DataAtlas.calificacion}
+              estrellas={DataAtlas.estrellas}
+              evaluaciones={DataAtlas.evaluaciones}
+              />
+
+            <Caracteristicas
+              icono1={<Image src={ico01} alt="Icono 1" />}
+              header1="Llegada autónoma"
+              description1="Realiza la llegada fácilmente con la cerradura con teclado."
+              icono2={<Image src={ico02} alt="Icono 1" />}
+              header2="Excelente ubicación"
+              description2="A los huéspedes que se quedaron aquí el año pasado les encantó la ubicación."
+              icono3={<Image src={ico03} alt="Icono 1" />}
+              header3="Vistas a la ciudad"
+              description3="Los huéspedes dicen que las vistas son espectaculares."
+              />
+            <div className="w-full h-px bg-gray-200"></div> 
+            
+
+            <Descriplong
+              header="Ramada Encore by Wyndham"
+              description={DataAtlas.longDescrption}
+            />
+
+            <div className="w-full h-px bg-gray-200"></div> 
+
+            <WeOffer/>
+          
+        </div>
+
+        <div className="md:w-[35%] relative mr-[30px] mb-10">
+            <Reserva
+              llegada={`${formatDate}`}
+              salida="11/05/2025"
+              huespedes={1}
+            />
+        </div>
+      </div>
+
+      
+
+      <div className="w-full h-px bg-gray-200"></div>
+
+      <ReviewList/>
+      
       <div className="w-full h-px bg-gray-200"></div> 
+      
       <Mapa
-      ciudad="Guadalajara Sur"
-      estado="Jalisco"
-      pais="La Gourmetería"
-      comentario="Este hotel informal se encuentra en un edificio luminoso junto a la carretera 80, a 11 km del centro de convenciones Expo Guadalajara y a 21 km del Aeropuerto Internacional Miguel Hidalgo y Costilla."
+      ciudad={DataAtlas.ciudad}
+      estado={DataAtlas.estado}
+      sede={DataAtlas.sede}
+      pais={DataAtlas.pais}
+      UrlMap={DataAtlas.UrlMap}
+      comentario={DataAtlas.mapaDescripcion}
       />
+      
 
       
     </>
