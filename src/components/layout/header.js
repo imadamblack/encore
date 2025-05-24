@@ -7,7 +7,7 @@ export default function Header() {
   return (
 
     <header
-      className={`w-full bg-white border-b border-solid border-[#eee] top-0 backdrop-blur-lg h-[8rem] flex justify-center z-[10] hover:top-0 `}
+      className={`w-full bg-white border-b border-solid border-[#eee] top-0 backdrop-blur-lg h-[8rem] flex justify-center z-[20] hover:top-0 md:fixed`}
     >
       <div className="flex items-center z-[1] py-4">
         <div className="relative flex items-center h-[4rem] w-[12rem]">
