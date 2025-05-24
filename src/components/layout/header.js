@@ -11,7 +11,7 @@ export default function Header() {
     >
       <div className="flex items-center z-[1] py-4">
         <div className="relative flex items-center h-[4rem] w-[12rem]">
-          <Link href="/" passhref>
+          <Link href="#" passhref>
             <a><Image src={logo} alt={info.companyName} layout="fill" objectFit="contain"/></a>
           </Link>
         </div>

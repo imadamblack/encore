@@ -1,16 +1,16 @@
 export const info = {
-  legalName: "Airbnb",
-  companyName: "3 cuartos Ag",
+  legalName: "Ramada Encore",
+  companyName: "Ramada Encore by Wyndham",
   description: "Airbnb",
   email: {
     sender: "",
     recipients: [""],
-    subject: "Nuevo prospecto BH Consulting",
+    subject: "Wyndham",
   },
   phoneNumber: "+525549118039",
   whatsapp: {
     value: "+525549118039",
-    message: "Buen día, me puede dar más información sobre las capacitaciones",
+    message: "Pendiente",
   },
   social: {
     facebook: "",
