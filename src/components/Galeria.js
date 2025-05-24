@@ -41,7 +41,7 @@ export default function Galeria() {
       <div className="w-full h-[50vh] max-w-[1120px] mx-auto px-[5px] hidden md:flex flex-col md:flex-row overflow-hidden mt-12 gap-3 relative">
 
         {/* Columna Izquierda */}
-        <div className="w-full md:flex-1 bg-blue-400 p-4 sm:h-[50vh] flex items-center justify-center text-white text-2xl sm:rounded-3xl md:rounded-l-3xl relative h-full group">
+        <div className="w-full md:flex-1 bg-gray-50 p-4 sm:h-[50vh] flex items-center justify-center text-white text-2xl sm:rounded-3xl md:rounded-l-3xl relative h-full group">
           <Image
             src={i00}
             alt="Imagen principal de la galería"
@@ -59,7 +59,7 @@ export default function Galeria() {
           {[i01, i02, i03, i04].map((imagen, index) => (
             <div
               key={index}
-              className={`bg-green-${400 + index * 100} p-4 flex items-center justify-center text-white text-xl relative h-full group ${index === 1 ? 'rounded-tr-3xl' : ''} ${index === 3 ? 'rounded-br-3xl' : ''}`}
+              className={`bg-gray-50 p-4 flex items-center justify-center text-white text-xl relative h-full group ${index === 1 ? 'rounded-tr-3xl' : ''} ${index === 3 ? 'rounded-br-3xl' : ''}`}
             >
               <Image
                 src={imagen}
@@ -76,7 +76,7 @@ export default function Galeria() {
 
         {/* Botón para abrir la galería */}
         <button
-          className="absolute bottom-6 right-6 z-[99] bg-white border border-solid border-black text-gray-900 px-4 py-2 rounded-md text-2xl cursor-pointer"
+          className="absolute bottom-6 right-6 z-[10] bg-white border border-solid border-black text-gray-900 px-4 py-2 rounded-md text-2xl cursor-pointer"
           onClick={() => setMostrarGaleria(true)}
         >
           ♥ Mostrar todas las fotos
@@ -102,7 +102,7 @@ export default function Galeria() {
             <div className="sticky top-0 left-0 right-0 max-w-[1000px] mx-auto bg-white z-50 flex justify-between items-center p-4 px-12 shadow rounded-full">
               <h2 className="text-3xl font-bold font-nunito">Galería Completa</h2>
               <button
-                className="text-3xl font-bold text-gray-600 hover:text-gray-800 transition duration-300 rounded-full w-12 h-12 flex items-center justify-center bg-gray-100 hover:bg-gray-200"
+                className="text-3xl font-bold text-white hover:text-white transition duration-300 rounded-full w-12 h-12 flex items-center justify-center bg-red-300 hover:bg-red-600"
                 onClick={() => setMostrarGaleria(false)}
               >
                 &times;
@@ -117,7 +117,7 @@ export default function Galeria() {
                 return (
                   <div
                     key={index}
-                    className={`overflow-hidden rounded-lg ${
+                    className={`overflow-hidden rounded-lg bg-gray-50 ${
                       isLarge ? 'md:col-span-2 row-span-2' : ''
                     }`}
                   >
@@ -126,7 +126,7 @@ export default function Galeria() {
                       alt={`Galería ${index}`}
                       width={isLarge ? 800 : 400} // Ajusta el ancho según el tamaño
                       height={isLarge ? 600 : 300} // Ajusta la altura según el tamaño
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover transition-transform duration-300 transform hover:scale-[1.02]"
                     />
                   </div>
                 );
