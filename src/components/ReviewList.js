@@ -14,33 +14,53 @@ const ReviewList = () => {
         },
         {
             user_img: "/img-Comentarios/02.png",
-            nombre: "Maria Cuevas",
-            ciudad: "Guadalajara",
-            pais: "México",
-            calificacion: "⭐⭐⭐⭐",
-            fecha: "Febrero 2023",
-            tipo: "Vacaciones",
-            comentario: "Muy buena ubicación, el lugar es cómodo."
+            nombre: "Margarita Lucatero",
+            ciudad: "",
+            pais: "Google",
+            calificacion: "⭐⭐⭐⭐⭐",
+            fecha: "Hace 4 Meses",
+            tipo: "",
+            comentario: "La pasamos tan bien que no recordamos tomar fotos. Tienes coctel de cortesía al llegar. El desayuno buffet espectacular. La cama y almohada son un sueño. El personal del hotel superamable. Sin duda la mejor opción cerca del aeropuerto."
         },
         {
             user_img: "/img-Comentarios/03.png",
-            nombre: "Ivan Hernandez",
-            ciudad: "Queretaro",
-            pais: "México",
+            nombre: "Jesús R",
+            ciudad: "",
+            pais: "Tripadvisor",
             calificacion: "⭐⭐⭐⭐⭐",
-            fecha: "mayo 2025",
-            tipo: "Negocios",
+            fecha: "Hace un Mes",
+            tipo: "",
             comentario: "el trato del personal fue excelente, el lugar es muy bonito y cómodo."
         },
         {
             user_img: "/img-Comentarios/04.png",
-            nombre: "Angelina Villalobos",
-            ciudad: "Cuquio",
-            pais: "México",
+            nombre: "David Botello Huerta",
+            ciudad: "",
+            pais: "Google ",
+            calificacion: "⭐⭐⭐⭐",
+            fecha: "Hace 3 Meses",
+            tipo: "Vacaciones en Pareja",
+            comentario: "Fue muy agradable la estancia y la comida del restaurante también de buen sabor"
+        },
+        {
+            user_img: "/img-Comentarios/05.png",
+            nombre: "Margaret Rosas",
+            ciudad: "",
+            pais: "Google",
             calificacion: "⭐⭐⭐⭐⭐",
-            fecha: "mayo 2025",
+            fecha: "",
             tipo: "Negocios",
-            comentario: "los empleados siempre estan diponibles para resolver tus duda, el lugar es muy bonito y cómodo."
+            comentario: "Servicio atento del gerente y muy buen trato. Muchachas gracias por hacer mi estadía agradable y proporcionarme un gran descanso, sigan compartiendo esa atención al cliente con su personal"
+        },
+        {
+            user_img: "/img-Comentarios/06.png",
+            nombre: "Walter S",
+            ciudad: "",
+            pais: "Tripadvisor",
+            calificacion: "⭐⭐⭐⭐⭐",
+            fecha: "",
+            tipo: "Negocios",
+            comentario: "Muy buen servicio en general, el lugar es muy acogedor y la ubicación es ideal para el trabajo, tiene empleados muy serviciales y están siempre atentos a las solicitudes y ayudes que tiene uno, el lugar está siempre limpio, lo recomendaría siempre y seguiría viniendo"
         }
     ];
 
@@ -71,7 +91,7 @@ const ReviewList = () => {
                             |
                             <div className="text-xl">{comentario.tipo}</div>
                         </div>
-                        <div className="text-2xl font-semibold mt-4">{comentario.comentario}</div>
+                        <div className="text-2xl font-semibold mt-4 text text-justify">{comentario.comentario}</div>
                     </div>
                 ))}
             </div>
