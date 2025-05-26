@@ -10,7 +10,7 @@ const descripcion_detallada = ({header, description,}) => {
                     <p className='text-3xl text-justify'>{description}</p>
                 </div>
                 <div>
-                    <div className='text-2xl'><button className="bg-red-600 hover:bg-red-600">Mostrar Más</button></div>
+                    <div className='text-2xl'><button className="bg-red-600 hover:bg-red-600 mt-10">Mostrar Más</button></div>
                 </div>
             </div>
             

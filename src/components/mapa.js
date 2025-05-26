@@ -15,8 +15,8 @@ const mapa = ({ ciudad, estado, pais, comentario, sede, UrlMap }) => {
           referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
       </div>
-      <div className="text-3xl font-semibold pt-10">{`${ciudad}, ${estado}, ${pais} `}</div>
-      <p className="text-2xl text-justify py-6">{comentario}</p>
+      <div className="text-3xl font-semibold mt-10 pt-10">{`${ciudad}, ${estado}, ${pais} `}</div>
+      <p className="text-2xl text-justify py-6 mt-10">{comentario}</p>
     </div>
   );
 };

@@ -68,7 +68,7 @@ export default function Home() {
         subtitle="Ramada Encore by Wyndham"
          
       />
-      <div className="max-w-[1120px] mx-auto mt-5 md:flex pb-10">
+      <div className="max-w-[1120px] mx-auto mt-[50px] md:flex pb-10">
         <div className="md:w-[65%]">
             
             <Subtitulo
