@@ -3,7 +3,7 @@ import DatePicker from 'react-datepicker';
 // import 'react-datepicker/dist/react-datepicker.css'; // Si lo usas
 import Image from 'next/image';
 
-const Reserva = ({ llegada, salida, huespedes }) => {
+const Reserva = ({ llegada, salida, huespedes, precio}) => {
   // Estado para las fechas seleccionadas
   const [startDate, setStartDate] = useState(llegada ? new Date(llegada) : null);
   const [endDate, setEndDate] = useState(salida ? new Date(salida) : null);
@@ -32,6 +32,9 @@ const Reserva = ({ llegada, salida, huespedes }) => {
       {/* Version PC*/}
       <div className="hidden md:block mx-auto mt-10 w-full sticky top-0 bottom-10">
         <div className="bg-white shadow-2xl rounded-2xl p-10 flex flex-col space-y-4 sticky top-0 z-[10]">
+          <div className='text-3xl font-extrabold'>{`$${precio} MXN `}
+            <span className='font-normal text-2xl'>por noche</span>
+          </div>
           <div className='border border-[#374151] rounded-3xl font-bold font-nunito text-2xl'>
             <div>
               <div className='flex flex-col-2 justify-around  p-4 font-bold font-nunito text-2xl'>
