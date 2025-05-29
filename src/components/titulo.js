@@ -18,9 +18,9 @@ const Titulo = ({ titulo, subtitle }) => {
       <div className='max-w-[1120px] mx-auto mt-10 px-[30px] w-full relative'>
         <div className="w-full">
           <div className="flex flex-row items-center  justify-between gap-y-2">
-            <h2 className="text-3xl font-nunito font-semibold">{`Encore | ${titulo}`}
+            <h2 className="text-3xl font-nunito font-bold">{`${subtitle} : ${titulo}`}
             </h2>
-            <p className="text-lg">{subtitle}</p>
+            {/*<p className="text-lg">{subtitle}</p>*/}
           </div>
         </div>
 
