@@ -37,6 +37,7 @@ import  ReviewList  from '../components/ReviewList.js';
 import Mapa  from '../components/mapa.js';
 import WeOffer from '../components/WeOffer.js';
 import Calificacion from '../components/Calificacion.js';
+import Calendario from '../components/calendario.js';
 
 
 export default function Home() {
@@ -72,18 +73,18 @@ export default function Home() {
         <div className="md:w-[65%]">
             
             <Subtitulo
-              titulo="Con el respaldo de quienes sí saben de hospitalidad"
+              titulo="Ramada Encore es todo lo que esperas de un hotel"
               ciudad={DataAtlas.ciudad}
               pais={DataAtlas['pais']}
-              subtitle=""
+              subtitle="Con el xxxxxxxxxxxxxxxxx de hospitalidad"
               />
             
             <Calificacion
-              titulo="Favorito entre los huespedes"
-              subtitle="Los huéspedes dicen que este lugar es increíble."
-              calificacion={DataAtlas.calificacion}
-              estrellas={DataAtlas.estrellas}
-              evaluaciones={DataAtlas.evaluaciones}
+              t_01={'Certificacion xxxxxx'}
+              t_02={'fast pasta'}
+              t_03={' muestra el cambio'}
+              alto={64}
+              ancho={64}
               />
 
             <Caracteristicas
@@ -101,13 +102,20 @@ export default function Home() {
             
 
             <Descriplong
-              header="Ramada Encore by Wyndham"
-              description={DataAtlas.longDescrption}
+              description1={DataAtlas.longDescrption1}
+              description2={DataAtlas.longDescrption2}
+              description3={DataAtlas.longDescrption3}
             />
 
             <div className="w-full h-px bg-gray-200"></div> 
 
             <WeOffer/>
+            
+            <div className="w-full h-px bg-gray-200"></div> 
+
+            <Calendario
+              titulo = "Reserva tu habitacion en segundos, Facil , Rapido  y Sin complicaciones"
+            />
           
         </div>
 
@@ -116,6 +124,7 @@ export default function Home() {
               llegada={`${formatDate}`}
               salida="11/05/2025"
               huespedes={1}
+              precio={1600}
             />
         </div>
       </div>
