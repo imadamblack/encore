@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import Datepicker from '@datepicker-react/styled';
 
-const Reserva = ({ llegada, salida, huespedes, precio }) => {
+export default function Reserva ({ llegada, salida, huespedes, precio })  {
   const [startDate, setStartDate] = useState(llegada ? new Date(llegada) : null);
   const [endDate, setEndDate] = useState(salida ? new Date(salida) : null);
   const [huespedesCount, setHuespedes] = useState(huespedes || 1);
@@ -29,32 +30,29 @@ const Reserva = ({ llegada, salida, huespedes, precio }) => {
             <div className='p-4'>
               <div className='flex justify-around font-bold font-nunito text-2xl'>
                 {/* Campo LLEGADA */}
+                                
                 <div className="flex flex-col items-center space-x-2 font-extrabold">
                   Check-in
-                  <div className="cursor-pointer font-normal text-center">
+                  <div 
+                    className="cursor-pointer font-normal text-center" 
+                    onClick={() => document.getElementById('check-in-datepicker').focus()}
+                  >
                     {startDate ? startDate.toLocaleDateString('es-ES') : llegada || 'Selecciona fecha'}
                   </div>
+                  
                 </div>
+
                 {/* Campo SALIDA */}
                 <div className="flex flex-col items-center space-x-2 font-extrabold">
                   Check-out
-                  <div className="cursor-pointer font-normal text-center">
+                  <div 
+                    className="cursor-pointer font-normal text-center" 
+                    onClick={() => document.getElementById('check-out-datepicker').focus()}
+                  >
                     {endDate ? endDate.toLocaleDateString('es-ES') : salida || 'Selecciona fecha'}
                   </div>
+                  
                 </div>
-              </div>
-              {/* Calendario */}
-              <div className="mt-4">
-                {/*<Datepicker
-                  startDate={startDate}
-                  endDate={endDate}
-                  minDate={new Date()}
-                  onDatesChange={handleDatesChange}
-                  displayFormat="yyyy/MM/dd"
-                  numberOfMonths={1}
-                  showClearDates
-                  vertical
-                />*/}
               </div>
               {/* Campo HUESPEDES */}
               <div className="flex flex-col text-center items-center p-2 border-t border-[#374151] font-extrabold">
@@ -224,4 +222,3 @@ const Reserva = ({ llegada, salida, huespedes, precio }) => {
   );
 };
 
-export default Reserva;
