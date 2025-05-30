@@ -9,6 +9,7 @@ import Mapa from '../components/mapa';
 import mapImg from '../../public/landing/mapa.png';
 import ModalSedeSelector from '../components/sedeSelector';
 import { useSedeSelector } from '../context/SedeSelectorContext';
+import ModalPhotoGallery from '../components/photoModal';
 
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
     return DataAtlas.find((sede) => sede.id === 'ags');
   });
   const { openSedeSelector, setOpenSedeSelector } = useSedeSelector();
+  const [openPhotoModal,setOpenPhotoModal] = useState(false)
 
   const handleSedeChange = (sedeId) => {
     const found = DataAtlas.find((sede) => sede.id === sedeId) ||
@@ -52,9 +54,8 @@ export default function Home() {
     });
   });
 
-  if (!sedeInfo) return null; // <- Evita el error
+  if (!sedeInfo) return null;
 
-  console.log(sedeInfo);
   const {
     id,
     sede,
@@ -70,6 +71,7 @@ export default function Home() {
   } = sedeInfo;
 
   const images = Array.from({length: 4}, (_, i) => `/imgSlider/${id}/0${i + 1}.jpg`);
+  const mobileImages = Array.from({ length: 18 }, (_, i) => `/imgSlider/${id}/${String(i + 1).padStart(2, '0')}.jpg`);
 
   return (
     <>
@@ -79,26 +81,33 @@ export default function Home() {
           onSelect={handleSedeChange}
         />
       )}
+      {openPhotoModal &&  (
+        <ModalPhotoGallery
+          sede={sedeInfo?.id}
+          onClose={() => setOpenPhotoModal(false)}
+        />
+      )}
       <section id="fotos" className="hidden lg:flex flex-col container md:py-12">
         <div className="relative w-full rounded-3xl overflow-hidden">
           <button
+            onClick={() => setOpenPhotoModal(true)}
             className="-ft-2 absolute bg-white hover:bg-gray-100 hover:text-brand-2 bottom-8 right-8 text-brand-2 shadow-lg border border-brand-2"
           >Más imágenes
           </button>
           <div className="grid grid-cols-2 gap-4">
             <div className="relative flex bg-gray-100 shadow pt-[100%]">
-              <div className="absolute inset-0 flex cursor-pointer">
-                <img src={`/imgSlider/${id}/00.jpg`} className="w-full h-full object-cover object-center"/>
+              <div onClick={() => setOpenPhotoModal(true)} className="absolute inset-0 flex cursor-pointer overflow-hidden">
+                <img src={`/imgSlider/${id}/00.jpg`} className="object-cover object-center"/>
               </div>
             </div>
             <div className="grid grid-cols-2 grid-rows-2 gap-4">
               {images.map((src, idx) => (
-                <div className="flex bg-gray-100 cursor-pointer">
+                <div onClick={() => setOpenPhotoModal(true)} className="flex bg-gray-100 cursor-pointer overflow-hidden">
                   <img
                     key={idx}
                     src={src}
                     alt={`Imagen ${idx + 1}`}
-                    className="w-full h-full object-cover object-center"
+                    className="object-cover object-center"
                   />
                 </div>
               ))}
@@ -113,7 +122,7 @@ export default function Home() {
             <div className="w-[90vw] h-[50vh] flex cursor-pointer snap-center">
               <img src={`/imgSlider/${id}/00.jpg`} className="object-cover object-center"/>
             </div>
-            {images.map((src, idx) => (
+            {mobileImages.map((src, idx) => (
               <div className="w-[90vw] h-[50vh] flex cursor-pointer snap-center">
                 <img
                   key={idx}
@@ -148,22 +157,22 @@ export default function Home() {
             <h3 className="mt-16 mb-12">Con el respaldo de quienes sí saben de hospitalidad.</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 border rounded-3xl">
               <div className="w-full flex flex-col md:border-r p-8">
-                <div className="flex-grow">
+                <div className="w-2/3 mx-auto flex-grow">
                   <img src="/landing/icon-1.png" className="w-2/3 mx-auto"/>
                 </div>
-                <p className="-ft-1 tracking-tight text-center mt-8">Certificación Wyndham Green Nivel 2</p>
+                <p className="tracking-tight text-center mt-8">Certificación Wyndham Green Nivel 2</p>
               </div>
               <div className="w-full flex flex-col p-8">
-                <div className="flex-grow flex">
+                <div className="w-2/3 mx-auto flex-grow flex">
                   <img src="/landing/icon-2.png" className="w-full m-auto"/>
                 </div>
-                <p className="-ft-1 tracking-tight text-center mt-8">Plan de recompensas Wyndham Rewards</p>
+                <p className="tracking-tight text-center mt-8">Plan de recompensas Wyndham Rewards</p>
               </div>
               <div className="w-full flex flex-col md:border-l p-8">
-                <div className="flex-grow">
-                  <img src="/landing/icon-3.png" className="w-2/3 mx-auto"/>
+                <div className="w-2/5 mx-auto flex flex-grow">
+                  <img src="/landing/icon-3.png" className="w-full m-auto"/>
                 </div>
-                <p className="-ft-1 tracking-tight text-center mt-8">Marca internacional con presencia local</p>
+                <p className="tracking-tight text-center mt-8">Marca internacional con presencia local</p>
               </div>
             </div>
 
