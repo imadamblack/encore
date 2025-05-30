@@ -23,29 +23,14 @@ const Titulo = ({ titulo, subtitle }) => {
             {/*<p className="text-lg">{subtitle}</p>*/}
           </div>
         </div>
-
-        {/* Aquí va el ImageSlider directamente */}
-        {/* El contenedor del slider es quien debe definir el tamaño y el overflow */}
         <div className="md:hidden w-full h-[45vh] overflow-hidden rounded-xl relative mt-12">
             <ImageSlider
                 images={images}
                 interval={10000}
             />
         </div>
-
-        {/*Carga la Galeria en version en pantallas medianas */}
         <Galeria
         />
-
-        {/* Si quieres mostrar el contador del slider, puedes pasarlo como prop al ImageSlider
-            o manejarlo dentro del ImageSlider mismo si conoces el índice actual.
-            Por ahora, lo mantengo fuera, pero ten en cuenta que necesitaría saber el estado del slider.
-        */}
-        {/* <div
-          className="absolute bottom-[20px] right-[20px] w-auto h-min-[30px] bg-black opacity-80 rounded-xl flex items-center px-4"
-        >
-          <span className="text-white">01 | 30</span>
-        </div> */}
       </div>
     </>
   );

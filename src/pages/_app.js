@@ -7,10 +7,11 @@ import 'swiper/css';
 import Layout from '../components/layout/layout';
 import { useRouter } from 'next/router';
 import { setCookie, getCookie } from 'cookies-next';
+import { SedeSelectorProvider } from '../context/SedeSelectorContext';
 
 
 function MyApp({Component, pageProps}) {
-  const {query: { fbclid }} = useRouter();
+  const {query: {fbclid}} = useRouter();
   const _fbc = getCookie('_fbc');
 
   if (!_fbc && fbclid) {
@@ -18,14 +19,16 @@ function MyApp({Component, pageProps}) {
     setCookie(
       '_fbc',
       `fb.1.<span class="math-inline">\{Date\.now\(\)\}\.</span>{fbclid}`,
-      {expires: new Date(date.setDate(date.getDate() + 7))}
+      {expires: new Date(date.setDate(date.getDate() + 7))},
     );
   }
 
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <SedeSelectorProvider>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </SedeSelectorProvider>
   );
 }
 

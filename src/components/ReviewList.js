@@ -1,11 +1,9 @@
-import Image from 'next/image';
-
 const ReviewList = () => {
     const comentarios = [
         {
             user_img: "/img-Comentarios/01.png",
             nombre: "Mauro T",
-            ciudad: "",
+            ciudad: "Guadalajara",
             pais: "Tripadvisor",
             calificacion: "⭐⭐⭐⭐⭐",
             fecha: "Hace un Mes",
@@ -15,7 +13,7 @@ const ReviewList = () => {
         {
             user_img: "/img-Comentarios/02.png",
             nombre: "Margarita Lucatero",
-            ciudad: "",
+            ciudad: "Monterrey",
             pais: "Google",
             calificacion: "⭐⭐⭐⭐⭐",
             fecha: "Hace 4 Meses",
@@ -25,7 +23,7 @@ const ReviewList = () => {
         {
             user_img: "/img-Comentarios/03.png",
             nombre: "Jesús R",
-            ciudad: "",
+            ciudad: "Puebla",
             pais: "Tripadvisor",
             calificacion: "⭐⭐⭐⭐⭐",
             fecha: "Hace un Mes",
@@ -35,7 +33,7 @@ const ReviewList = () => {
         {
             user_img: "/img-Comentarios/04.png",
             nombre: "David Botello Huerta",
-            ciudad: "",
+            ciudad: "Guadalajara",
             pais: "Google ",
             calificacion: "⭐⭐⭐⭐",
             fecha: "Hace 3 Meses",
@@ -45,35 +43,28 @@ const ReviewList = () => {
         {
             user_img: "/img-Comentarios/05.png",
             nombre: "Margaret Rosas",
-            ciudad: "",
+            ciudad: "Querétaro",
             pais: "Google",
             calificacion: "⭐⭐⭐⭐⭐",
-            fecha: "",
+            fecha: "Hace 6 Meses",
             tipo: "Negocios",
             comentario: "Servicio atento del gerente y muy buen trato. Muchachas gracias por hacer mi estadía agradable y proporcionarme un gran descanso, sigan compartiendo esa atención al cliente con su personal"
         },
         {
             user_img: "/img-Comentarios/06.png",
             nombre: "Walter S",
-            ciudad: "",
+            ciudad: "Guadalajara",
             pais: "Tripadvisor",
             calificacion: "⭐⭐⭐⭐⭐",
-            fecha: "",
+            fecha: "Hace 2 Semanas",
             tipo: "Negocios",
             comentario: "Muy buen servicio en general, el lugar es muy acogedor y la ubicación es ideal para el trabajo, tiene empleados muy serviciales y están siempre atentos a las solicitudes y ayudes que tiene uno, el lugar está siempre limpio, lo recomendaría siempre y seguiría viniendo"
         }
     ];
 
     return (
-        <div className='max-w-[1120px] mx-auto mt-10 px-[30px] w-full py-6'>
+        <div className='w-full mx-auto mt-10 px-[30px] w-full py-6'>
             {/* Contenedor grid para 2 columnas en PC y 1 en móvil */}
-            <div className='text-[50px] font-extrabold font-nunito pb-4 mx-auto text-center'>
-                ⭐+1,200 
-                <p className='text-2xl font-medium'>
-                    Calificaciones de huéspedes que no eligen cualquier hotel
-                </p>
-
-            </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10 mb-10">
                 {comentarios.map((comentario, index) => (
                     <div key={`com-${index}`} className="bg-white p-6 rounded-lg ">
@@ -86,18 +77,18 @@ const ReviewList = () => {
                                 />
                             </div>
                             <div>
-                                <div className="text-3xl font-semibold">{comentario.nombre}</div>
-                                <div className="text-xl">{`${comentario.ciudad}, ${comentario.pais}`}</div>
+                                <div className="ft-1 font-medium">{comentario.nombre}</div>
+                                <div className="-ft-1">{`${comentario.ciudad}, ${comentario.pais}`}</div>
                             </div>
                         </div>
                         <div className="flex flex-row items-center gap-8 mt-4">
-                            <div className="text-xl">{comentario.calificacion}</div>
+                            <div className="-ft-1">{comentario.calificacion}</div>
                             |
-                            <div className="text-xl font-semibold">{comentario.fecha}</div>
-                            |
-                            <div className="text-xl">{comentario.tipo}</div>
+                            <div className="-ft-1">{comentario.fecha}</div>
+                            {/*|*/}
+                            {/*<div className="-ft-1">{comentario.tipo}</div>*/}
                         </div>
-                        <div className="text-2xl font-semibold mt-4 text text-justify">{comentario.comentario}</div>
+                        <div className="mt-8 ft-0">{comentario.comentario}</div>
                     </div>
                 ))}
             </div>

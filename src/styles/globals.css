@@ -1,145 +1,160 @@
 @charset "UTF-8";
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+@import url("https://use.typekit.net/khl7rkh.css");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 html {
   font-size: 62.5%;
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "gotham", sans-serif;
+}
+
+@keyframes ft-xxl {
+  20% {
+    font-size: 3.2rem;
+  }
+  100% {
+    font-size: 7rem;
+  }
+}
+.ft-xxl {
+  --tt-key: ft-xxl;
+  --tt-ease: ease-in;
+  font-size: 7rem;
+  line-height: 1.1;
 }
 
 @keyframes ft-11 {
   20% {
-    font-size: 3.26rem;
+    font-size: 2.7rem;
   }
   100% {
-    font-size: 6.2rem;
+    font-size: 3.26rem;
   }
 }
 .ft-11 {
   --tt-key: ft-11;
   --tt-ease: ease-in;
-  font-size: 6.2rem;
+  font-size: 3.26rem;
   line-height: 1.1;
 }
 
 @keyframes ft-10 {
   20% {
-    font-size: 3.06rem;
+    font-size: 2.6rem;
   }
   100% {
-    font-size: 5.5rem;
+    font-size: 3.06rem;
   }
 }
 .ft-10, h1 {
   --tt-key: ft-10;
   --tt-ease: ease-in;
-  font-size: 5.5rem;
+  font-size: 3.06rem;
   line-height: 1.1;
 }
 
 @keyframes ft-9 {
   20% {
-    font-size: 2.86rem;
+    font-size: 2.5rem;
   }
   100% {
-    font-size: 4.9rem;
+    font-size: 2.86rem;
   }
 }
 .ft-9 {
   --tt-key: ft-9;
   --tt-ease: ease-in;
-  font-size: 4.9rem;
+  font-size: 2.86rem;
   line-height: 1.1;
 }
 
 @keyframes ft-8 {
   20% {
-    font-size: 2.68rem;
+    font-size: 2.4rem;
   }
   100% {
-    font-size: 4.36rem;
+    font-size: 2.68rem;
   }
 }
 .ft-8 {
   --tt-key: ft-8;
   --tt-ease: ease-in;
-  font-size: 4.36rem;
+  font-size: 2.68rem;
   line-height: 1.1;
 }
 
 @keyframes ft-7 {
   20% {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
   }
   100% {
-    font-size: 3.88rem;
+    font-size: 2.5rem;
   }
 }
 .ft-7, h2 {
   --tt-key: ft-7;
   --tt-ease: ease-in;
-  font-size: 3.88rem;
+  font-size: 2.5rem;
   line-height: 1.1;
 }
 
 @keyframes ft-6 {
   20% {
-    font-size: 2.36rem;
+    font-size: 2.2rem;
   }
   100% {
-    font-size: 3.45rem;
+    font-size: 2.36rem;
   }
 }
 .ft-6 {
   --tt-key: ft-6;
   --tt-ease: ease-in;
-  font-size: 3.45rem;
+  font-size: 2.36rem;
   line-height: 1.1;
 }
 
 @keyframes ft-5 {
   20% {
-    font-size: 2.2rem;
+    font-size: 2.1rem;
   }
   100% {
-    font-size: 3.05rem;
+    font-size: 2.2rem;
   }
 }
 .ft-5 {
   --tt-key: ft-5;
   --tt-ease: ease-in;
-  font-size: 3.05rem;
+  font-size: 2.2rem;
   line-height: 1.1;
 }
 
 @keyframes ft-4 {
   20% {
-    font-size: 2.1rem;
+    font-size: 2rem;
   }
   100% {
-    font-size: 2.7rem;
+    font-size: 2.1rem;
   }
 }
 .ft-4, h3 {
   --tt-key: ft-4;
   --tt-ease: ease-in;
-  font-size: 2.7rem;
+  font-size: 2.1rem;
   line-height: 1.2;
 }
 
 @keyframes ft-3 {
   20% {
-    font-size: 1.95rem;
+    font-size: 1.9rem;
   }
   100% {
-    font-size: 2.4rem;
+    font-size: 1.95rem;
   }
 }
 .ft-3, h4 {
   --tt-key: ft-3;
   --tt-ease: ease-in;
-  font-size: 2.4rem;
+  font-size: 1.95rem;
   line-height: 1.5;
 }
 
@@ -148,13 +163,13 @@ html {
     font-size: 1.8rem;
   }
   100% {
-    font-size: 2.15rem;
+    font-size: 1.8rem;
   }
 }
 .ft-2, h5 {
   --tt-key: ft-2;
   --tt-ease: ease-in;
-  font-size: 2.15rem;
+  font-size: 1.8rem;
   line-height: 1.5;
 }
 
@@ -163,13 +178,13 @@ html {
     font-size: 1.7rem;
   }
   100% {
-    font-size: 1.9rem;
+    font-size: 1.7rem;
   }
 }
 .ft-1, h6 {
   --tt-key: ft-1;
   --tt-ease: ease-in;
-  font-size: 1.9rem;
+  font-size: 1.7rem;
   line-height: 1.5;
 }
 
@@ -178,13 +193,13 @@ html {
     font-size: 1.6rem;
   }
   100% {
-    font-size: 1.7rem;
+    font-size: 1.6rem;
   }
 }
 .ft-0, input[type=radio] + label, li, p {
   --tt-key: ft-0;
   --tt-ease: ease-in;
-  font-size: 1.7rem;
+  font-size: 1.6rem;
   line-height: 1.5;
 }
 
@@ -193,13 +208,13 @@ html {
     font-size: 1.4rem;
   }
   100% {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
 }
 .-ft-1 {
   --tt-key: -ft-1;
   --tt-ease: ease-in;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   line-height: 1.5;
 }
 
@@ -208,13 +223,13 @@ html {
     font-size: 1.25rem;
   }
   100% {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
 }
 .-ft-2 {
   --tt-key: -ft-2;
   --tt-ease: ease-in;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   line-height: 1.5;
 }
 
@@ -223,13 +238,13 @@ html {
     font-size: 1.1rem;
   }
   100% {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
 }
 .-ft-3, .overhead, label {
   --tt-key: -ft-3;
   --tt-ease: ease-in;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   line-height: 1.5;
 }
 
@@ -261,13 +276,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1, h2, h3 {
-  font-family: "Nunito Sans", sans-serif;
-  @apply font-semibold;
+  font-family: "gotham", sans-serif;
+  @apply font-medium;
 }
 
 h4, h5, h6 {
-  font-family: "Nunito Sans", sans-serif;
-  @apply font-bold;
+  font-family: "gotham", sans-serif;
 }
 
 p, li {
@@ -282,15 +296,15 @@ a {
 }
 
 .sans {
-  font-family: "Inter", sans-serif;
+  font-family: "gotham", sans-serif;
 }
 
 .serif {
-  font-family: "Fira Sans", sans-serif;
+  font-family: "gotham", sans-serif;
 }
 
 .condensed {
-  font-family: "Inter", sans-serif;
+  font-family: "gotham-narrow", sans-serif;
 }
 
 form {
@@ -367,14 +381,13 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Nunito', sans-serif;
 }
 
 #__next {
   display: flex;
   flex-direction: column;
   position: relative;
-  min-height: 100vh;
+  min-height: 100dvh;
 }
 
 main {

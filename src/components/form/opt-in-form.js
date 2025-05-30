@@ -1,14 +1,15 @@
-import Link from 'next/link';
 import { info } from '../../../info';
 import { FormProvider, useForm } from 'react-hook-form';
 import { useRouter } from 'next/router';
 import { getCookie, setCookie } from 'cookies-next';
 import { useState } from 'react';
-import { restrictNumber, emailRegExp } from '../../utils/formValidators';
+import { restrictNumber } from '../../utils/formValidators';
 import fbEvent from '../../services/fbEvents';
 import { Select } from './formAtoms';
+import { DataAtlas } from '../../../DataAtlas';
+import { urlQueryToSearchParams } from 'next/dist/shared/lib/router/utils/querystring';
 
-export default function OptInForm({lastClick = ''}) {
+export default function OptInForm({city, lastClick = '', onSedeChange}) {
   const [sending, setSending] = useState(false);
   const router = useRouter();
   const methods = useForm({mode: 'all'});
@@ -28,6 +29,14 @@ export default function OptInForm({lastClick = ''}) {
     const _fbp = getCookie('_fbp');
     const payload = {...data, _fbc, _fbp};
 
+    const found = DataAtlas.find((sede) => sede.id === data.city);
+
+    const forwardUrl = `${found.url}?${urlQueryToSearchParams({
+      checkInDate: data.checkInDate,
+      checkOutDate: data.checkOutDate,
+      adults: data.adults,
+    })}`;
+
     fetch(info.optInWebhook, {
       method: 'POST',
       body: JSON.stringify(payload),
@@ -42,7 +51,13 @@ export default function OptInForm({lastClick = ''}) {
           {email: data.email, phone: data.phone, externalID: id},
         );
         setCookie('lead', {...data, id});
-        router.push(`/survey?id=${id}`);
+
+        const forwardLink = document.createElement('a');
+        forwardLink.href = forwardUrl;
+        forwardLink.target = '_blank';
+        forwardLink.click();
+
+        router.push('/thankyou');
       })
       .catch(() => {
         fbEvent(
@@ -50,13 +65,47 @@ export default function OptInForm({lastClick = ''}) {
           {email: data.email, phone: data.phone, externalID: ''},
         );
         setCookie('lead', {...data});
-        router.push(`/thankyou`);
-      })
+
+        const forwardLink = document.createElement('a');
+        forwardLink.href = forwardUrl;
+        forwardLink.target = '_blank';
+        forwardLink.click();
+
+        router.push('/thankyou');
+      });
   };
 
   return (
     <FormProvider {...methods}>
       <form className="flex flex-col w-full space-y-4" onSubmit={handleSubmit(onSubmit)}>
+        <div className="grid grid-cols-2 gap-4">
+          <div className="w-full">
+            <p className="-ft-1 uppercase font-medium">Check In</p>
+            <input
+              {...register(
+                'checkInDate',
+                {
+                  required: true,
+                },
+              )}
+              type="date"
+              className={errors.checkInDate && '!bg-red-200'}
+              placeholder="Entrada"/>
+          </div>
+          <div className="w-full">
+            <p className="-ft-1 uppercase font-medium">Check Out</p>
+            <input
+              {...register(
+                'checkOutDate',
+                {
+                  required: true,
+                },
+              )}
+              type="date"
+              className={errors.checkOutDate && '!bg-red-200'}
+              placeholder="Salida"/>
+          </div>
+        </div>
         <input
           {...register(
             'fullName',
@@ -68,39 +117,50 @@ export default function OptInForm({lastClick = ''}) {
           placeholder="Tu nombre"/>
         <input
           {...register(
-            'email',
-            {
-              required: true,
-              pattern: {
-                value: emailRegExp,
-                message: 'Revisa tu correo',
-              },
-            },
-          )}
-          className={errors.email && '!bg-red-200'}
-          placeholder="Un email activo"/>
-        <input
-          {...register(
             'phone',
             {required: true, maxLength: 10, minLength: 10},
           )}
           className={errors.phone && '!bg-red-200'}
           onKeyDown={restrictNumber}
           placeholder="Teléfono de WhatsApp"/>
+        <input
+          {...register(
+            'adults',
+            {required: true},
+          )}
+          type="number"
+          className={errors.phone && '!bg-red-200'}
+          onKeyDown={restrictNumber}
+          placeholder="Huéspedes"/>
+
+        <Select
+          name="city"
+          inputOptions={{required: true}}
+          placeholder="A dónde vas?"
+          value={city}
+          onChange={(newSede) => onSedeChange(newSede)}
+          options={[
+            {value: 'ags', name: 'Aguascalientes'},
+            {value: 'gdl', name: 'Guadalajara Sur'},
+            {value: 'gdl-a', name: 'Guadalajara Aeropuerto'},
+            {value: 'mty', name: 'Monterrey'},
+            {value: 'pue', name: 'Puebla'},
+            {value: 'qro', name: 'Querétaro'},
+            {value: 'slp', name: 'San Luis Potosí'},
+          ]}
+        />
 
         <button
           disabled={sending}
           className={`w-full ${sending ? '!bg-transparent' : 'hover:!bg-brand-3'}`}
         >{
           !sending
-            ? 'Enviar →'
+            ? 'Reserva →'
             : <span className="material-symbols-outlined animate-spin">progress_activity</span>
         }</button>
 
         <div className="mt-4">
-          <p className="-ft-3 text-center text-white">Al dar clic aceptas nuestra&nbsp;
-            <Link href={info.privacyNotice}>política de privacidad</Link>
-          </p>
+          <p className="-ft-3 text-center">Aún no se te cobrará nada</p>
         </div>
       </form>
     </FormProvider>

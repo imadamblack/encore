@@ -1,48 +1,49 @@
 import Image from 'next/image';
 import { DataAtlas } from '../../DataAtlas.js';
-import Blockbuster from '../components/blockbuster';
-import ImageGrid  from '../components/imagegrid.js';
-import Link from 'next/link';
 import OptInForm from '../components/form/opt-in-form';
 import { useEffect, useState } from 'react';
 import scrollDepth from '../utils/scrollDepth';
-import i00 from '../../public/landing/00.png';
-import i01 from '../../public/landing/01.png';
-import i02 from '../../public/landing/02.png';
-import i03 from '../../public/landing/03.png';
-import i04 from '../../public/landing/04.png';
-import i05 from '../../public/landing/10.png';
-import i06 from '../../public/landing/06.png';
-import i07 from '../../public/landing/07.png';
-import i08 from '../../public/landing/08.png';
-import i09 from '../../public/landing/09.png';
-import i10 from '../../public/landing/10.png';
-import i11 from '../../public/landing/11.png';
-import clientes1 from '../../public/landing/nuestros-clientes-a.jpg';
-import clientes2 from '../../public/landing/nuestros-clientes-b.jpg';
-import clientes3 from '../../public/landing/nuestros-clientes-c.jpg';
-import clientes4 from '../../public/landing/nuestros-clientes-d.jpg';
-import clientes5 from '../../public/landing/nuestros-clientes-e.jpg';
-import ico01 from '../../public/landing/ico01.png';
-import ico02 from '../../public/landing/ico02.png';
-import ico03 from '../../public/landing/ico03.png';
-import ico04 from '../../public/landing/ico04.png';
-import Faqs from '../components/faqs';
-import  Titulo  from '../components/titulo.js';
-import  Subtitulo  from '../components/subtitulo.js';
-import  Reserva  from '../components/reserva.js';
-import  Caracteristicas  from '../components/caracteristicas.js';
-import  Descriplong  from '../components/descripcion-detallada.js';
-import  ReviewList  from '../components/ReviewList.js';
-import Mapa  from '../components/mapa.js';
-import WeOffer from '../components/WeOffer.js';
-import Calificacion from '../components/Calificacion.js';
-import Calendario from '../components/calendario.js';
-import AllLocations from '../components/AllLocations.js'
+import { useRouter } from 'next/router';
+import ReviewList from '../components/ReviewList';
+import Mapa from '../components/mapa';
+import mapImg from '../../public/landing/mapa.png';
+import ModalSedeSelector from '../components/sedeSelector';
+import { useSedeSelector } from '../context/SedeSelectorContext';
 
 
 export default function Home() {
   const [lastClick, setLastClick] = useState('');
+  const router = useRouter();
+  const {pathname} = router;
+  const [sedeInfo, setSedeInfo] = useState(() => {
+    return DataAtlas.find((sede) => sede.id === 'ags');
+  });
+  const { openSedeSelector, setOpenSedeSelector } = useSedeSelector();
+
+  const handleSedeChange = (sedeId) => {
+    const found = DataAtlas.find((sede) => sede.id === sedeId) ||
+      DataAtlas.find((sede) => sede.id === 'ags');
+    setSedeInfo(found);
+
+    router.replace({
+      pathname,
+      query: {
+        ...router.query,
+        sede: sedeId,
+      },
+    }, undefined, {shallow: true});
+  };
+
+  useEffect(() => {
+    if (!router.isReady) return;
+    const sedeId = router.query.sede;
+
+    if (sedeId) {
+      handleSedeChange(sedeId);
+    } else {
+      handleSedeChange('ags');
+    }
+  }, [router.isReady, router.query.sede]);
 
   useEffect(() => {
     scrollDepth({
@@ -51,108 +52,263 @@ export default function Home() {
     });
   });
 
-  const cta = {
-    main: 'Regístrate, da clic',
-    description: 'Programa una consultoría y diagnóstico de tu negocio gratuitos',
-  };
+  if (!sedeInfo) return null; // <- Evita el error
 
-  const fechaActual = new Date()
-  const formatDate = fechaActual.toISOString().split('T')[0];
-  console.log(fechaActual);
-  console.log(formatDate);
+  console.log(sedeInfo);
+  const {
+    id,
+    sede,
+    city,
+    state,
+    country,
+    rate,
+    stars,
+    ratings,
+    mapUrl,
+    mapDescription,
+    amenities,
+  } = sedeInfo;
 
+  const images = Array.from({length: 4}, (_, i) => `/imgSlider/${id}/0${i + 1}.jpg`);
 
   return (
     <>
-      <div className='mt-[80px]'></div>
-      <Titulo
-        titulo={DataAtlas.sede}
-        subtitle="Ramada Encore by Wyndham"
-         
-      />
-      <div className="max-w-[1120px] mx-auto mt-[50px] md:flex pb-10">
-        <div className="md:w-[65%]">
-            
-            <Subtitulo
-              titulo="Ramada Encore es todo lo que esperas de un hotel"
-              ciudad={DataAtlas.ciudad}
-              pais={DataAtlas['pais']}
-              subtitle="Con el xxxxxxxxxxxxxxxxx de hospitalidad"
-              />
-            
-            <Calificacion
-              t_01={'Certificacion xxxxxx'}
-              t_02={'fast pasta'}
-              t_03={' muestra el cambio'}
-              alto={64}
-              ancho={64}
-              />
+      {openSedeSelector && (
+        <ModalSedeSelector
+          onClose={() => setOpenSedeSelector(false)}
+          onSelect={handleSedeChange}
+        />
+      )}
+      <section id="fotos" className="hidden lg:flex flex-col container md:py-12">
+        <div className="relative w-full rounded-3xl overflow-hidden">
+          <button
+            className="-ft-2 absolute bg-white hover:bg-gray-100 hover:text-brand-2 bottom-8 right-8 text-brand-2 shadow-lg border border-brand-2"
+          >Más imágenes
+          </button>
+          <div className="grid grid-cols-2 gap-4">
+            <div className="relative flex bg-gray-100 shadow pt-[100%]">
+              <div className="absolute inset-0 flex cursor-pointer">
+                <img src={`/imgSlider/${id}/00.jpg`} className="object-cover object-center"/>
+              </div>
+            </div>
+            <div className="grid grid-cols-2 grid-rows-2 gap-4">
+              {images.map((src, idx) => (
+                <div className="flex bg-gray-100 cursor-pointer">
+                  <img
+                    key={idx}
+                    src={src}
+                    alt={`Imagen ${idx + 1}`}
+                    className="object-cover object-center"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
-            <Caracteristicas
-              icono1={<Image src={ico01} alt="Icono 1" />}
-              header1="Llegada autónoma"
-              description1="Realiza la llegada fácilmente con la cerradura con teclado."
-              icono2={<Image src={ico02} alt="Icono 1" />}
-              header2="Excelente ubicación"
-              description2="A los huéspedes que se quedaron aquí el año pasado les encantó la ubicación."
-              icono3={<Image src={ico03} alt="Icono 1" />}
-              header3="Vistas a la ciudad"
-              description3="Los huéspedes dicen que las vistas son espectaculares."
-              />
-            <div className="w-full h-px bg-gray-200"></div> 
-            
+      <section className="lg:hidden">
+        <div className="relative flex h-[50vh] w-full overflow-x-scroll snap-x snap-mandatory">
+          <div className="w-max relative flex">
+            <div className="w-[90vw] h-[50vh] flex cursor-pointer snap-center">
+              <img src={`/imgSlider/${id}/00.jpg`} className="object-cover object-center"/>
+            </div>
+            {images.map((src, idx) => (
+              <div className="w-[90vw] h-[50vh] flex cursor-pointer snap-center">
+                <img
+                  key={idx}
+                  src={src}
+                  alt={`Imagen ${idx + 1}`}
+                  className="object-cover object-center"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-            <Descriplong
-              description1={DataAtlas.longDescrption1}
-              description2={DataAtlas.longDescrption2}
-              description3={DataAtlas.longDescrption3}
-            />
+      <section className="container mt-12 flex gap-8">
+        <div className="flex-grow w-full lg:w-2/3 mb-20">
+          <div className="max-w-[72rem]">
+            <div className="flex flex-col lg:flex-row lg:gap-8">
+              <div className="lg:w-2/3">
+                <h2>Encore by Wyndham {sede} es todo lo que esperas de un hotel</h2>
+                <p className="mt-4">{rate} <span className="text-yellow-400">{stars}</span> | {ratings} Reviews</p>
+              </div>
+              <div className="hidden lg:flex items-center lg:w-1/3">
+                  <button
+                    className="flex bg-red-400 rounded-full border border-red-500 shadow-md h-[4rem] px-8 items-center w-full"
+                    onClick={() => setOpenSedeSelector(true)}
+                  >
+                    <p className="-ft-1 text-white font-medium">¿Vas a otra ciudad?</p>
+                  </button>
+              </div>
+            </div>
 
-            <div className="w-full h-px bg-gray-200"></div> 
+            <h3 className="mt-16 mb-12">Con el respaldo de quienes sí saben de hospitalidad.</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 border rounded-3xl">
+              <div className="w-full flex flex-col md:border-r p-8">
+                <div className="flex-grow">
+                  <img src="/landing/icon-1.png" className="w-2/3 mx-auto"/>
+                </div>
+                <p className="-ft-1 tracking-tight text-center mt-8">Certificación Wyndham Green Nivel 2</p>
+              </div>
+              <div className="w-full flex flex-col p-8">
+                <div className="flex-grow flex">
+                  <img src="/landing/icon-2.png" className="w-full m-auto"/>
+                </div>
+                <p className="-ft-1 tracking-tight text-center mt-8">Plan de recompensas Wyndham Rewards</p>
+              </div>
+              <div className="w-full flex flex-col md:border-l p-8">
+                <div className="flex-grow">
+                  <img src="/landing/icon-3.png" className="w-2/3 mx-auto"/>
+                </div>
+                <p className="-ft-1 tracking-tight text-center mt-8">Marca internacional con presencia local</p>
+              </div>
+            </div>
 
-            <WeOffer/>
-            
-            <div className="w-full h-px bg-gray-200"></div> 
+            <div className="flex flex-col gap-12 border-b py-16 w-full">
+              <div className="w-full flex items-center gap-8">
+                <div className="w-1/6">
+                  <div className="relative w-1/2 mx-auto pt-[100%]">
+                    <Image src="/icons/desayuno.svg" layout="fill" className="object-center object-contain"/>
+                  </div>
+                </div>
+                <div className="flex-grow">
+                  <p className="font-medium">Desayuno bufete en cortesía</p>
+                  <p className="-ft-2">Un bufete completo en cortesía con menú creado por chef internacional, con
+                    estación
+                    de huevos al gusto de 7:00 a 11:00 am</p>
+                </div>
+              </div>
+              <div className="w-full flex items-center gap-8">
+                <div className="w-1/6">
+                  <div className="relative w-1/2 mx-auto pt-[100%]">
+                    <Image src="/icons/desayuno.svg" layout="fill" className="object-center object-contain"/>
+                  </div>
+                </div>
+                <div className="flex-grow">
+                  <p className="font-medium">Desayuno bufete en cortesía</p>
+                  <p className="-ft-2">Un bufete completo en cortesía con menú creado por chef internacional, con
+                    estación
+                    de huevos al gusto de 7:00 a 11:00 am</p>
+                </div>
+              </div>
+            </div>
 
-            <Calendario
-              titulo = "Reserva tu habitacion en segundos, Facil , Rapido  y Sin complicaciones"
-            />
-          
+            <div id="description" className="border-y py-16 w-full">
+              <p>
+                Encore by Wyndham es para quienes quieren dormir bien, moverse sin perder tiempo y encontrar diseño,
+                arte
+                y funcionalidad sin pagar extra por cada detalle. Es una cadena de hoteles ejecutivos, sí.
+                <br/><br/>
+                Pero con alma local, con actitud relajada, con eficiencia real y con espacios pensados para vivir y no
+                solo para dormir.
+                <br/><br/>
+                Cada sede vibra distinto: murales de artistas locales, música que te acompaña y pan recién horneado para
+                que desayunes rico.
+                <br/><br/>
+                No importa si viajas por trabajo, por un evento, por una feria o por placer.
+                <br/><br/>
+                En Encore te mueves como quieres, duermes como necesitas y conectas con la ciudad de verdad.
+              </p>
+            </div>
+
+            <div id="amenities" className="border-t py-16 w-full">
+              <h2 className="mb-16">Todo esto viene incluido, porque así debería ser.</h2>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                {amenities.map(({img, v}) => (
+                  <div className="w-full flex items-center gap-8">
+                    <div className="w-1/6">
+                      <div className="relative w-1/2 mx-auto pt-[100%]">
+                        <Image src={`/icons/${img}.svg`} layout="fill" className="object-center object-contain"/>
+                      </div>
+                    </div>
+                    <div className="flex-grow">
+                      <p>{v}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div className="md:w-[35%] relative mr-[30px] mb-10">
-            <Reserva
-              llegada={`${formatDate}`}
-              salida="11/05/2025"
-              huespedes={1}
-              precio={1600}
-            />
+        <div className="ml-auto hidden lg:block md:w-1/3">
+          <div className="sticky top-36 mb-20">
+            <div className="w-full mb-8 p-8 rounded-2xl shadow-lg bg-white">
+              <p className="condensed font-bold text-center">🚨 Reserva en este sitio y obtén la mejor tarifa</p>
+            </div>
+            <div className="w-full p-8 rounded-2xl shadow-lg bg-white">
+              <OptInForm
+                city={sedeInfo.id}
+                onSedeChange={handleSedeChange}
+              />
+            </div>
+          </div>
         </div>
-      </div>
 
-      
+      </section>
 
-      <div className="w-full h-px bg-gray-200"></div>
+      <section className="w-full py-8 bg-white shadow-lg border-t sticky bottom-0 lg:bottom-auto lg:top-0 z-[50]">
+        <div className="container flex justify-center lg:justify-between">
+          <div className="hidden lg:flex items-center gap-8">
+            <a href="#fotos" className="ft-0">Fotos</a>
+            <a href="#description" className="ft-0">Descripción</a>
+            <a href="#amenities" className="ft-0">Amenidades</a>
+          </div>
+          <div
+            className="flex w-full lg:w-1/6 bg-brand-5 rounded-lg border border-green-800 shadow-xl h-[4.2rem] px-8 items-center">
+            <a href="#form" className="-ft-1 w-full text-white text-center font-medium">Selecciona tus fechas</a>
+          </div>
+          </div>
+      </section>
 
-      <ReviewList/>
-      
-      <div className="w-full h-px bg-gray-200"></div> 
-      
-      <Mapa
-      ciudad={DataAtlas.ciudad}
-      estado={DataAtlas.estado}
-      sede={DataAtlas.sede}
-      pais={DataAtlas.pais}
-      UrlMap={DataAtlas.UrlMap}
-      comentario={DataAtlas.mapaDescripcion}
-      />
-      <AllLocations
-        titulo = "¿Vas a otra Ciudad?"
-        comentario = "Todas nuestras sedes están estratégicamente ubicadas en puntos clave: zonas industriales, comerciales, de eventos o cercanas a aeropuertos."
-      />
-      
+      <section className="container border-t py-20">
+        <div className="md:w-1/3 mx-auto">
+        <p className="ft-xxl font-bold text-center mb-8">⭐️ +1,200</p>
+          <p className="text-center">reseñas de huéspedes que confirman lo que tú estás por vivir</p>
+        </div>
+        <ReviewList/>
+      </section>
 
-      
+      <section className="container border-t py-20">
+        <h2 className="mb-16">Donde vas a estar</h2>
+        <Mapa
+          ciudad={city}
+          estado={state}
+          sede={sede}
+          pais={country}
+          UrlMap={mapUrl}
+          comentario={mapDescription}
+        />
+      </section>
+
+      <section className="container border-t py-20">
+        <h2>¿Vas a otra ciudad?</h2>
+        <p className="mb-16">Todas nuestras sedes están estratégicamente ubicadas en zonas clave: industriales,
+          comerciales, de eventos o aeropuertos.</p>
+        <div className="relative w-full pt-[56%] rounded-2xl overflow-hidden">
+          <Image src={mapImg} layout="fill" objectFit="cover"/>
+        </div>
+      </section>
+
+      <section className="container flex justify-center border-t pt-16">
+        <div className="flex w-full lg:w-1/3 justify-center mx-auto">
+          <div id="form" className="mb-20">
+            <div className="w-full mb-8 p-8 rounded-2xl shadow-lg bg-white">
+              <p className="condensed font-bold text-center">🚨 Reserva en este sitio y obtén la mejor tarifa</p>
+            </div>
+            <div className="w-full p-8 rounded-2xl shadow-lg bg-white">
+              <OptInForm
+                city={sedeInfo.id}
+                onSedeChange={handleSedeChange}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
     </>
   );
 }
