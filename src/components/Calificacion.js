@@ -1,8 +1,8 @@
 import React from 'react'
 import Image from 'next/image'
-import i01 from '../../public/Iconos/Arte.svg'
-import i02 from '../../public/Iconos/Arte.svg'
-import i03 from '../../public/Iconos/Arte.svg'
+import i01 from '../../public/certi/Certificacion-green-2.png'
+import i02 from '../../public/certi/Plan de Reconpensas.png'
+import i03 from '../../public/certi/Marca internacional.png'
 
 export default function Calificacion ({t_01, t_02, t_03, alto = 64, ancho = 64}) {
     return (
@@ -17,14 +17,14 @@ export default function Calificacion ({t_01, t_02, t_03, alto = 64, ancho = 64})
                                 src={i01}
                                 height={alto}
                                 width={ancho}
-                                alt="Arte"
+                                alt="certificacion Green nivel 2"
                             />
                             <div className="text-2xl font-nunito font-semibold">{`${t_01}`}</div>
                         </div>
                         <div className="hidden md:block w-px h-16 bg-gray-300 px-0"></div>
                         <div className="flex flex-col items-center">
                             <Image
-                                src={i01}
+                                src={i02}
                                 height={alto}
                                 width={ancho}
                                 alt="Arte"
@@ -34,7 +34,7 @@ export default function Calificacion ({t_01, t_02, t_03, alto = 64, ancho = 64})
                         <div className="w-px h-16 bg-gray-300"></div>
                         <div className="flex flex-col items-center">
                             <Image
-                                src={i01}
+                                src={i03}
                                 height={alto}
                                 width={ancho}
                                 alt="Arte"
