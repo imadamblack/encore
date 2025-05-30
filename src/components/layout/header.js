@@ -19,7 +19,18 @@ export default function Header() {
         </div>
         <div className="flex items-center">
           <div className="flex">
-            <div className='text-lg'><button className="bg-gray-300 hover:bg-red-600">¿Vas a otra ciudad</button>
+            <div className='text-lg'>
+              <button  
+                className="bg-gray-300 hover:bg-red-600" 
+                onClick={() => {
+                // Get a reference to the element you want to scroll to
+                  const targetElement = document.getElementById('AllLocations');
+                  if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' }); // Scrolls smoothly to the element
+                    }
+                  }
+                }
+              >¿Vas a otra ciudad</button>
             </div>
           </div>
         </div>
