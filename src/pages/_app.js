@@ -2,7 +2,7 @@
 
 import '../styles/globals.scss'; // Tu SCSS global existente
 import 'swiper/css';
-import '../styles/react-datepicker.css'; // <-- ¡IMPORTA LA COPIA LOCAL AQUÍ!
+
 
 import Layout from '../components/layout/layout';
 import { useRouter } from 'next/router';
