@@ -67,7 +67,13 @@ const ReviewList = () => {
     return (
         <div className='max-w-[1120px] mx-auto mt-10 px-[30px] w-full py-6'>
             {/* Contenedor grid para 2 columnas en PC y 1 en móvil */}
-            <div className='text-5xl font-bold font-nunito pb-4'>Calificaciones de huéspedes que no eligen cualquier hotel</div>
+            <div className='text-[50px] font-extrabold font-nunito pb-4 mx-auto text-center'>
+                ⭐+1,200 
+                <p className='text-2xl font-medium'>
+                    Calificaciones de huéspedes que no eligen cualquier hotel
+                </p>
+
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10 mb-10">
                 {comentarios.map((comentario, index) => (
                     <div key={`com-${index}`} className="bg-white p-6 rounded-lg ">
