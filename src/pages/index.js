@@ -38,6 +38,7 @@ import Mapa  from '../components/mapa.js';
 import WeOffer from '../components/WeOffer.js';
 import Calificacion from '../components/Calificacion.js';
 import Calendario from '../components/calendario.js';
+import AllLocations from '../components/AllLocations.js'
 
 
 export default function Home() {
@@ -144,6 +145,10 @@ export default function Home() {
       pais={DataAtlas.pais}
       UrlMap={DataAtlas.UrlMap}
       comentario={DataAtlas.mapaDescripcion}
+      />
+      <AllLocations
+        titulo = "¿Vas a otra Ciudad?"
+        comentario = "Todas nuestras sedes están estratégicamente ubicadas en puntos clave: zonas industriales, comerciales, de eventos o cercanas a aeropuertos."
       />
       
 
