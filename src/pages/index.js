@@ -88,7 +88,7 @@ export default function Home() {
           <div className="grid grid-cols-2 gap-4">
             <div className="relative flex bg-gray-100 shadow pt-[100%]">
               <div className="absolute inset-0 flex cursor-pointer">
-                <img src={`/imgSlider/${id}/00.jpg`} className="object-cover object-center"/>
+                <img src={`/imgSlider/${id}/00.jpg`} className="w-full h-full object-cover object-center"/>
               </div>
             </div>
             <div className="grid grid-cols-2 grid-rows-2 gap-4">
@@ -98,7 +98,7 @@ export default function Home() {
                     key={idx}
                     src={src}
                     alt={`Imagen ${idx + 1}`}
-                    className="object-cover object-center"
+                    className="w-full h-full object-cover object-center"
                   />
                 </div>
               ))}
