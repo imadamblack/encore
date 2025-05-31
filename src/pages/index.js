@@ -59,6 +59,7 @@ export default function Home() {
   const {
     id,
     sede,
+    description,
     city,
     state,
     country,
@@ -177,64 +178,61 @@ export default function Home() {
             </div>
 
             <div className="flex flex-col gap-12 border-b py-16 w-full">
-              <div className="w-full flex items-center gap-8">
-                <div className="w-1/6">
-                  <div className="relative w-1/2 mx-auto pt-[100%]">
-                    <Image src="/icons/desayuno.svg" layout="fill" className="object-center object-contain"/>
+              <div className="w-full flex flex-col md:flex-row items-center gap-8">
+                <div className="w-1/3 md:w-1/6">
+                  <div className="relative w-2/3 mx-auto pt-[100%]">
+                    <Image src="/icons/breakfast.png" layout="fill" className="object-center object-contain"/>
                   </div>
                 </div>
-                <div className="flex-grow">
+                <div className="flex-grow md:w-5/6">
                   <p className="font-medium">Desayuno bufete en cortesía</p>
                   <p className="-ft-2">Un bufete completo en cortesía con menú creado por chef internacional, con
                     estación
                     de huevos al gusto de 7:00 a 11:00 am</p>
                 </div>
               </div>
-              <div className="w-full flex items-center gap-8">
-                <div className="w-1/6">
-                  <div className="relative w-1/2 mx-auto pt-[100%]">
-                    <Image src="/icons/desayuno.svg" layout="fill" className="object-center object-contain"/>
+              <div className="w-full flex flex-col md:flex-row items-center gap-8">
+                <div className="w-1/3 md:w-1/6">
+                  <div className="relative w-2/3 mx-auto pt-[100%]">
+                    <Image src="/icons/location.png" layout="fill" className="object-center object-contain"/>
                   </div>
                 </div>
-                <div className="flex-grow">
-                  <p className="font-medium">Desayuno bufete en cortesía</p>
-                  <p className="-ft-2">Un bufete completo en cortesía con menú creado por chef internacional, con
-                    estación
-                    de huevos al gusto de 7:00 a 11:00 am</p>
+                <div className="flex-grow md:w-5/6">
+                  <p className="font-medium">En ubicaciones estratégicas de la ciudad</p>
+                  <p className="-ft-2">Nuestros hoteles están ubicados en zonas industriales, de eventos o cerca de aeropuertos</p>
                 </div>
               </div>
             </div>
 
             <div id="description" className="border-y py-16 w-full">
-              <p>
-                Encore by Wyndham es para quienes quieren dormir bien, moverse sin perder tiempo y encontrar diseño,
-                arte
-                y funcionalidad sin pagar extra por cada detalle. Es una cadena de hoteles ejecutivos, sí.
-                <br/><br/>
-                Pero con alma local, con actitud relajada, con eficiencia real y con espacios pensados para vivir y no
-                solo para dormir.
-                <br/><br/>
-                Cada sede vibra distinto: murales de artistas locales, música que te acompaña y pan recién horneado para
-                que desayunes rico.
-                <br/><br/>
-                No importa si viajas por trabajo, por un evento, por una feria o por placer.
-                <br/><br/>
-                En Encore te mueves como quieres, duermes como necesitas y conectas con la ciudad de verdad.
-              </p>
+              <p dangerouslySetInnerHTML={{__html: description}}/>
+                {/*Encore by Wyndham es para quienes quieren dormir bien, moverse sin perder tiempo y encontrar diseño,*/}
+                {/*arte*/}
+                {/*y funcionalidad sin pagar extra por cada detalle. Es una cadena de hoteles ejecutivos, sí.*/}
+                {/*<br/><br/>*/}
+                {/*Pero con alma local, con actitud relajada, con eficiencia real y con espacios pensados para vivir y no*/}
+                {/*solo para dormir.*/}
+                {/*<br/><br/>*/}
+                {/*Cada sede vibra distinto: murales de artistas locales, música que te acompaña y pan recién horneado para*/}
+                {/*que desayunes rico.*/}
+                {/*<br/><br/>*/}
+                {/*No importa si viajas por trabajo, por un evento, por una feria o por placer.*/}
+                {/*<br/><br/>*/}
+                {/*En Encore te mueves como quieres, duermes como necesitas y conectas con la ciudad de verdad.*/}
             </div>
 
             <div id="amenities" className="border-t py-16 w-full">
               <h2 className="mb-16">Todo esto viene incluido, porque así debería ser.</h2>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                {amenities.map(({img, v}) => (
+                {amenities.map(({key, value}) => (
                   <div className="w-full flex items-center gap-8">
                     <div className="w-1/6">
-                      <div className="relative w-1/2 mx-auto pt-[100%]">
-                        <Image src={`/icons/${img}.svg`} layout="fill" className="object-center object-contain"/>
+                      <div className="relative w-2/3 mx-auto pt-[100%]">
+                        <Image src={`/icons/${key}.png`} layout="fill" className="object-center object-contain"/>
                       </div>
                     </div>
                     <div className="flex-grow">
-                      <p>{v}</p>
+                      <p>{value}</p>
                     </div>
                   </div>
                 ))}
