@@ -185,8 +185,8 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="flex-grow md:w-5/6">
-                  <p className="font-medium">Desayuno bufete en cortesía</p>
-                  <p className="-ft-2">Un bufete completo en cortesía con menú creado por chef internacional, con
+                  <p className="font-medium">Desayuno buffet en cortesía</p>
+                  <p className="-ft-2">Un buffet completo en cortesía con menú creado por chef internacional, con
                     estación
                     de huevos al gusto de 7:00 a 11:00 am</p>
                 </div>
@@ -206,19 +206,6 @@ export default function Home() {
 
             <div id="description" className="border-y py-16 w-full">
               <p dangerouslySetInnerHTML={{__html: description}}/>
-                {/*Encore by Wyndham es para quienes quieren dormir bien, moverse sin perder tiempo y encontrar diseño,*/}
-                {/*arte*/}
-                {/*y funcionalidad sin pagar extra por cada detalle. Es una cadena de hoteles ejecutivos, sí.*/}
-                {/*<br/><br/>*/}
-                {/*Pero con alma local, con actitud relajada, con eficiencia real y con espacios pensados para vivir y no*/}
-                {/*solo para dormir.*/}
-                {/*<br/><br/>*/}
-                {/*Cada sede vibra distinto: murales de artistas locales, música que te acompaña y pan recién horneado para*/}
-                {/*que desayunes rico.*/}
-                {/*<br/><br/>*/}
-                {/*No importa si viajas por trabajo, por un evento, por una feria o por placer.*/}
-                {/*<br/><br/>*/}
-                {/*En Encore te mueves como quieres, duermes como necesitas y conectas con la ciudad de verdad.*/}
             </div>
 
             <div id="amenities" className="border-t py-16 w-full">
@@ -257,7 +244,7 @@ export default function Home() {
 
       </section>
 
-      <section className="w-full py-8 bg-white shadow-lg border-t sticky bottom-0 lg:bottom-auto lg:top-0 z-[50]">
+      <section className="w-full py-8 bg-white shadow-lg border-t sticky bottom-0 lg:bottom-auto top-0 z-[50]">
         <div className="container flex justify-center lg:justify-between">
           <div className="hidden lg:flex items-center gap-8">
             <a href="#fotos" className="ft-0">Fotos</a>
