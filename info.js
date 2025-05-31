@@ -1,7 +1,7 @@
 export const info = {
-  legalName: "Ramada Encore",
-  companyName: "Ramada Encore by Wyndham",
-  description: "Airbnb",
+  legalName: "Ramada Encore by Wyndham",
+  companyName: "Hoteles Encore",
+  description: "Hotel Relajado de Negocios",
   email: {
     sender: "",
     recipients: [""],
@@ -23,7 +23,7 @@ export const info = {
     city: "",
     state: "",
   },
-  optInWebhook: '',
+  optInWebhook: 'https://hook.us1.make.com/iblx745e1ck673ou37t5vrdiparermkl',
   surveyWebhook: '',
   surveyRedirect: '',
   privacyNotice: "/aviso-privacidad",

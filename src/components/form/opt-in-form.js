@@ -57,7 +57,7 @@ export default function OptInForm({city, lastClick = '', onSedeChange}) {
         forwardLink.target = '_blank';
         forwardLink.click();
 
-        router.push('/thankyou');
+        router.push(`/thankyou?forward=${forwardUrl}`);
       })
       .catch(() => {
         fbEvent(
@@ -71,7 +71,7 @@ export default function OptInForm({city, lastClick = '', onSedeChange}) {
         forwardLink.target = '_blank';
         forwardLink.click();
 
-        router.push('/thankyou');
+        router.push(`/thankyou?forward=${forwardUrl}`);
       });
   };
 
