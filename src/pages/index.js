@@ -98,7 +98,7 @@ export default function Home() {
           <div className="grid grid-cols-2 gap-4">
             <div className="relative flex bg-gray-100 shadow pt-[100%]">
               <div onClick={() => setOpenPhotoModal(true)} className="absolute inset-0 flex cursor-pointer overflow-hidden">
-                <Image src={`/imgSlider/00.jpg`} layout="fill" className="object-cover object-center"/>
+                <Image src={`/imgSlider/${id}/00.jpg`} layout="fill" className="object-cover object-center"/>
               </div>
             </div>
             <div className="grid grid-cols-2 grid-rows-2 gap-4">
