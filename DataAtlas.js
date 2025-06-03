@@ -37,7 +37,7 @@ Además, cada propiedad integra murales de artistas reconocidos que aportan iden
       { key: 'caja-seguridad', value: 'Caja de seguridad digital' },
       { key: 'cafeteria', value: 'Cafetera y kit de café en habitación' },
       { key: 'estacionamiento', value: 'Estacionamiento gratuito' },
-      { key: 'estacionamiento', value: 'Centro de carga de automóviles eléctricos.' },
+      { key: 'estacion-carga', value: 'Centro de carga de automóviles eléctricos.' },
       { key: 'game', value: 'Game Station con Xbox' },
       { key: 'billar', value: 'Billar' },
       { key: 'futbolito', value: 'Futbolito' }
@@ -79,7 +79,7 @@ Además, cada propiedad integra murales de artistas reconocidos que aportan iden
       { key: 'caja-seguridad', value: 'Caja de seguridad digital en habitación' },
       { key: 'cafeteria', value: 'Cafetera y kit de café en habitación.' },
       { key: 'estacionamiento', value: 'Estacionamiento gratuito.' },
-      { key: 'estacionamiento', value: 'Centro de carga de automóviles eléctricos.' },
+      { key: 'estacion-carga', value: 'Centro de carga de automóviles eléctricos.' },
       { key: 'game', value: 'Game Station' },
       { key: 'billar', value: 'Billar' },
       { key: 'futbolito', value: 'Futbolito' }
@@ -120,7 +120,7 @@ Además, cada propiedad integra murales de artistas reconocidos que aportan iden
       { key: 'caja-seguridad', value: 'Caja de seguridad digital en habitación' },
       { key: 'cafeteria', value: 'Cafetera y kit de café en habitación.' },
       { key: 'estacionamiento', value: 'Estacionamiento gratuito.' },
-      { key: 'estacionamiento', value: 'Centro de carga de automóviles eléctricos.' },
+      { key: 'estacion-carga', value: 'Centro de carga de automóviles eléctricos.' },
       { key: 'game', value: 'Game Station' },
       { key: 'billar', value: 'Billar' },
       { key: 'futbolito', value: 'Futbolito' }
@@ -163,7 +163,7 @@ Además, cada propiedad integra murales de artistas reconocidos que aportan iden
       { key: 'caja-seguridad', value: 'Caja de seguridad digital en habitación' },
       { key: 'cafeteria', value: 'Cafetera y kit de café en habitación.' },
       { key: 'estacionamiento', value: 'Estacionamiento gratuito.' },
-      { key: 'estacionamiento', value: 'Centro de carga de automóviles eléctricos.' },
+      { key: 'estacion-carga', value: 'Centro de carga de automóviles eléctricos.' },
       { key: 'game', value: 'Game Station' },
       { key: 'billar', value: 'Billar' },
       { key: 'futbolito', value: 'Futbolito' }
@@ -205,7 +205,7 @@ Además, cada propiedad integra murales de artistas reconocidos que aportan iden
       { key: 'caja-seguridad', value: 'Caja de seguridad digital en habitación' },
       { key: 'cafeteria', value: 'Cafetera y kit de café en habitación.' },
       { key: 'estacionamiento', value: 'Estacionamiento gratuito.' },
-      { key: 'estacionamiento', value: 'Centro de carga de automóviles eléctricos.' },
+      { key: 'estacion-carga', value: 'Centro de carga de automóviles eléctricos.' },
       { key: 'game', value: 'Game Station' },
       { key: 'billar', value: 'Billar' },
       { key: 'futbolito', value: 'Futbolito' }
@@ -247,7 +247,7 @@ Además, cada propiedad integra murales de artistas reconocidos que aportan iden
       { key: 'caja-seguridad', value: 'Caja de seguridad digital en habitación' },
       { key: 'cafeteria', value: 'Cafetera y kit de café en habitación.' },
       { key: 'estacionamiento', value: 'Estacionamiento gratuito.' },
-      { key: 'estacionamiento', value: 'Centro de carga de automóviles eléctricos.' },
+      { key: 'estacion-carga', value: 'Centro de carga de automóviles eléctricos.' },
       { key: 'game', value: 'Game Station' },
       { key: 'billar', value: 'Billar' },
       { key: 'futbolito', value: 'Futbolito' }
@@ -289,7 +289,7 @@ Además, cada propiedad integra murales de artistas reconocidos que aportan iden
       { key: 'caja-seguridad', value: 'Caja de seguridad digital en habitación' },
       { key: 'cafeteria', value: 'Cafetera y kit de café en habitación.' },
       { key: 'estacionamiento', value: 'Estacionamiento gratuito.' },
-      { key: 'estacionamiento', value: 'Centro de carga de automóviles eléctricos.' },
+      { key: 'estacion-carga', value: 'Centro de carga de automóviles eléctricos.' },
       { key: 'game', value: 'Game Station' },
       { key: 'billar', value: 'Billar' },
       { key: 'futbolito', value: 'Futbolito' }
@@ -330,7 +330,7 @@ Además, cada propiedad integra murales de artistas reconocidos que aportan iden
       { key: 'caja-seguridad', value: 'Caja de seguridad digital en habitación' },
       { key: 'cafeteria', value: 'Cafetera y kit de café en habitación.' },
       { key: 'estacionamiento', value: 'Estacionamiento gratuito.' },
-      { key: 'estacionamiento', value: 'Centro de carga de automóviles eléctricos.' },
+      { key: 'estacion-carga', value: 'Centro de carga de automóviles eléctricos.' },
       { key: 'game', value: 'Game Station' },
       { key: 'billar', value: 'Billar' },
       { key: 'futbolito', value: 'Futbolito' }
