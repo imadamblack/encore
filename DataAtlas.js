@@ -140,7 +140,7 @@ Además, cada propiedad integra murales de artistas reconocidos que aportan iden
     rate: 4.7,
     stars: '★★★★★',
     ratings: 214,
-    mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3732.6482946167063!2d-103.3085154!3d20.5841316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428add1937a660d%3A0xebb65cb9ca16a54f!2sRamada%20Encore%20by%20Wyndham%20Guadalajara%20Aeropuerto!5e0!3m2!1ses!2smx!4v1748801600000!5m2!1ses!2smx',
+    mapUrl: 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9680.290568827484!2d-103.3056407!3d20.5508166!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842f4d6fd2278261%3A0xb31e84592c7679b8!2sRamada%20Encore%20by%20Wyndham%20Guadalajara%20Aeropuerto!5e1!3m2!1ses!2sus!4v1748971571004!5m2!1ses!2sus',
     mapDescription: 'Hotel de negocios ubicado estratégicamente a minutos del aeropuerto, ideal para viajeros frecuentes y asistentes a eventos en Arena VFG o Club de Golf Atlas.',
     amenities: [
       { key: 'luggage', value: 'Lugagge Room' },
