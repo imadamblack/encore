@@ -173,7 +173,7 @@ Además, cada propiedad integra murales de artistas reconocidos que aportan iden
     id: 'mty',
     sede: 'Monterrey Apodaca',
     description: `Ubicado en el municipio de Apodaca, Nuevo León, una zona eminentemente industrial con empresas de vocación diversa.<br/><br/>Cercano al Aeropuerto Internacional Mariano Escobedo (20 minutos) y sobre el acceso principal a la Zona Metropolitana de Monterrey.<br/><br/>Mini Store 24/7 en front desk (excepto SLP). Venta de refrescos, botanas, dulces así como artículos de higiene personal y medicamento básico.<br/><br/>Room Service nocturno con horario extendido con platillos seleccionados hasta las 3:00am.<br/><br/>Ambientado con murales de “Pacasso” con temática sobre el espíritu emprendedor de Nuevo León. Personalidades empresariales, industria, arte, gastronomía y arquitectura.`,
-    url: 'https://www.wyndhamhotels.com/es-xl/ramada/monterrey-mexico/ramada-encore-monterrey-apodaca-zona-aeropuerto/rooms-rates',
+    url: 'https://www.wyndhamhotels.com/es-xl/ramada/monterrey-mexico/ramada-encore-onterrey-apodaca-zona-aeropuerto/rooms-rates',
     street: 'Blvd. Aeropuerto 400',
     neighborhood: 'Parque Industrial Nexxus Apodaca',
     cp: '66600',
