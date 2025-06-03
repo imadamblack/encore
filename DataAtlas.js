@@ -37,6 +37,7 @@ Además, cada propiedad integra murales de artistas reconocidos que aportan iden
       { key: 'caja-seguridad', value: 'Caja de seguridad digital' },
       { key: 'cafeteria', value: 'Cafetera y kit de café en habitación' },
       { key: 'estacionamiento', value: 'Estacionamiento gratuito' },
+      { key: 'estacionamiento', value: 'Centro de carga de automóviles eléctricos.' },
       { key: 'game', value: 'Game Station con Xbox' },
       { key: 'billar', value: 'Billar' },
       { key: 'futbolito', value: 'Futbolito' }
@@ -78,6 +79,7 @@ Además, cada propiedad integra murales de artistas reconocidos que aportan iden
       { key: 'caja-seguridad', value: 'Caja de seguridad digital en habitación' },
       { key: 'cafeteria', value: 'Cafetera y kit de café en habitación.' },
       { key: 'estacionamiento', value: 'Estacionamiento gratuito.' },
+      { key: 'estacionamiento', value: 'Centro de carga de automóviles eléctricos.' },
       { key: 'game', value: 'Game Station' },
       { key: 'billar', value: 'Billar' },
       { key: 'futbolito', value: 'Futbolito' }
@@ -86,8 +88,8 @@ Además, cada propiedad integra murales de artistas reconocidos que aportan iden
   {
     id: 'gdl',
     sede: 'Guadalajara Sur',
-    description: `Se encuentra en La Gourmeteria, centro comercial dedicado a la recreación y gastronomía. Cuenta con restaurantes (actualmente 4), bar (Sala de despecho), cine y gimnasio.<br/><br/>Ubicado en el sur de la ciudad de Guadalajara, muy cercano a múltiples terrazas y salones de eventos, lo que permite hospedar tanto a personas foráneas como locales que asisten a celebraciones sociales.<br/><br/>Cercano a lienzos Charros en Tlajomulco de Zuñiga donde se celebran encuentros charros anualmente.<br/><br/>Pan hecho en el hotel. Horneado en nuestras cocinas diariamente con variedad de piezas, disponible durante desayuno buffet en cortesía.<br/><br/>Ambientado con murales de Jis con temática abstracta.<br/><br/>Conectividad de equipo móvil hacia pantalla de TV para transmitir servicios de streaming (Netflix, entre otros).`,
-    url: 'https://www.wyndhamhotels.com/es-xl/ramada/guadalajara-mexico/ramada-encore-guadalajara-sur/rooms-rates',
+    description: `Se encuentra en La Gourmeteria, centro comercial dedicado a la recreación y gastronomía. Cuenta con restaurantes, bar (Sala de despecho), cine y gimnasio.<br/><br/>Ubicado en el sur de la ciudad de Guadalajara, muy cercano a múltiples terrazas y salones de eventos, lo que permite hospedar tanto a personas foráneas como locales que asisten a celebraciones sociales.<br/><br/>Cercano a lienzos Charros en Tlajomulco de Zuñiga donde se celebran encuentros charros anualmente.<br/><br/>Pan hecho en el hotel. Horneado en nuestras cocinas diariamente con variedad de piezas, disponible durante desayuno buffet en cortesía.<br/><br/>Ambientado con murales de Jis con temática abstracta.<br/><br/>Conectividad de equipo móvil hacia pantalla de TV para transmitir servicios de streaming (Netflix, entre otros).`,
+    url: 'https://www.wyndhamhotels.com/es-xl/ramada/guadalajara-mexico/ramada-encore-by-wyndham-guadalajara-sur/rooms-rates',
     street: 'Av. López Mateos Sur 1710',
     neighborhood: 'Tlajomulco, Plaza La Gourmetería',
     cp: '45645',
@@ -118,6 +120,7 @@ Además, cada propiedad integra murales de artistas reconocidos que aportan iden
       { key: 'caja-seguridad', value: 'Caja de seguridad digital en habitación' },
       { key: 'cafeteria', value: 'Cafetera y kit de café en habitación.' },
       { key: 'estacionamiento', value: 'Estacionamiento gratuito.' },
+      { key: 'estacionamiento', value: 'Centro de carga de automóviles eléctricos.' },
       { key: 'game', value: 'Game Station' },
       { key: 'billar', value: 'Billar' },
       { key: 'futbolito', value: 'Futbolito' }
@@ -160,6 +163,7 @@ Además, cada propiedad integra murales de artistas reconocidos que aportan iden
       { key: 'caja-seguridad', value: 'Caja de seguridad digital en habitación' },
       { key: 'cafeteria', value: 'Cafetera y kit de café en habitación.' },
       { key: 'estacionamiento', value: 'Estacionamiento gratuito.' },
+      { key: 'estacionamiento', value: 'Centro de carga de automóviles eléctricos.' },
       { key: 'game', value: 'Game Station' },
       { key: 'billar', value: 'Billar' },
       { key: 'futbolito', value: 'Futbolito' }
@@ -201,6 +205,7 @@ Además, cada propiedad integra murales de artistas reconocidos que aportan iden
       { key: 'caja-seguridad', value: 'Caja de seguridad digital en habitación' },
       { key: 'cafeteria', value: 'Cafetera y kit de café en habitación.' },
       { key: 'estacionamiento', value: 'Estacionamiento gratuito.' },
+      { key: 'estacionamiento', value: 'Centro de carga de automóviles eléctricos.' },
       { key: 'game', value: 'Game Station' },
       { key: 'billar', value: 'Billar' },
       { key: 'futbolito', value: 'Futbolito' }
@@ -242,6 +247,7 @@ Además, cada propiedad integra murales de artistas reconocidos que aportan iden
       { key: 'caja-seguridad', value: 'Caja de seguridad digital en habitación' },
       { key: 'cafeteria', value: 'Cafetera y kit de café en habitación.' },
       { key: 'estacionamiento', value: 'Estacionamiento gratuito.' },
+      { key: 'estacionamiento', value: 'Centro de carga de automóviles eléctricos.' },
       { key: 'game', value: 'Game Station' },
       { key: 'billar', value: 'Billar' },
       { key: 'futbolito', value: 'Futbolito' }
@@ -250,7 +256,7 @@ Además, cada propiedad integra murales de artistas reconocidos que aportan iden
   {
     id: 'qro',
     sede: 'Querétaro',
-    description: `Ubicado sobre Paseo de la República en Juriquilla (Carretera 57), zona de alto desarrollo económico y empresarial.<br/><br/>A un costado del centro comercial Antea, el más exclusivo de la ciudad (equivalente a Andares en Guadalajara), con fácil acceso hacia San Luis Potosí y el norte del país.<br/><br/>A 40 minutos de San Miguel de Allende y destino vacacional de fin de semana para visitantes provenientes de la CDMX.<br/><br/>Ambientado con murales de Huevocartoon con temática inspirada en las 7 Bellas Artes.`,
+    description: `Ubicado sobre Paseo de la República en Juriquilla (Carretera 57), zona de alto desarrollo económico y empresarial.<br/><br/>A un costado del centro comercial Antea, el más exclusivo de la ciudad, con fácil acceso hacia San Luis Potosí y el norte del país.<br/><br/>A 40 minutos de San Miguel de Allende y destino vacacional de fin de semana para visitantes provenientes de la CDMX.<br/><br/>Ambientado con murales de Huevocartoon con temática inspirada en las 7 Bellas Artes.`,
     url: 'https://www.wyndhamhotels.com/es-xl/ramada/queretaro-mexico/ramada-encore-queretaro/rooms-rates',
     street: 'Paseo de la República 11515',
     neighborhood: 'Juriquilla',
@@ -283,6 +289,7 @@ Además, cada propiedad integra murales de artistas reconocidos que aportan iden
       { key: 'caja-seguridad', value: 'Caja de seguridad digital en habitación' },
       { key: 'cafeteria', value: 'Cafetera y kit de café en habitación.' },
       { key: 'estacionamiento', value: 'Estacionamiento gratuito.' },
+      { key: 'estacionamiento', value: 'Centro de carga de automóviles eléctricos.' },
       { key: 'game', value: 'Game Station' },
       { key: 'billar', value: 'Billar' },
       { key: 'futbolito', value: 'Futbolito' }
@@ -323,6 +330,7 @@ Además, cada propiedad integra murales de artistas reconocidos que aportan iden
       { key: 'caja-seguridad', value: 'Caja de seguridad digital en habitación' },
       { key: 'cafeteria', value: 'Cafetera y kit de café en habitación.' },
       { key: 'estacionamiento', value: 'Estacionamiento gratuito.' },
+      { key: 'estacionamiento', value: 'Centro de carga de automóviles eléctricos.' },
       { key: 'game', value: 'Game Station' },
       { key: 'billar', value: 'Billar' },
       { key: 'futbolito', value: 'Futbolito' }
