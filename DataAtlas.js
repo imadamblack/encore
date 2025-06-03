@@ -215,7 +215,7 @@ Además, cada propiedad integra murales de artistas reconocidos que aportan iden
     id: 'pue',
     sede: 'Puebla',
     description: `Ubicado en el acceso de la ciudad de Puebla provenientes de la autopista CDMX-Puebla, junto a Oulets Premier Puebla, un centro comercial con marcas premium.<br/><br/>Situado en la zona FINSA, rodeado de parques industriales y empresas automotrices. La planta de Volkswagen es la más cercana e importante en la región.<br/><br/>Hotel ejecutivo de marca más cercano al aeropuerto (20 minutos), a Cholula (20–25 minutos) y a Valquirico, un centro turístico tipo pueblo italiano con oferta gastronómica y de entretenimiento.<br/><br/>Puebla es una ciudad con vocación turística, famosa por su centro histórico barroco y su gastronomía reconocida a nivel nacional e internacional.<br/><br/>Ambientado con murales de “Trino” en homenaje al estado de Puebla, su historia, industria, arquitectura y cultura.`,
-    url: 'https://www.wyndhamhotels.com/es-xl/ramada/puebla-mexico/ramada-encore-puebla/rooms-rates',
+    url: 'https://www.wyndhamhotels.com/es-xl/ramada/puebla-mexico/ramada-encore-puebla-mexico/rooms-rates',
     street: 'Autopista México - Puebla Km. 117',
     neighborhood: 'Zona FINSA',
     cp: '72640',
