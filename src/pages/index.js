@@ -124,7 +124,7 @@ export default function Home() {
         <div className="relative flex h-[50vh] w-full overflow-x-scroll snap-x snap-mandatory">
           <div className="w-max relative flex">
             <div className="relative w-[90vw] h-[50vh] flex cursor-pointer snap-center">
-              <Image src={`/imgSlider/00.jpg`} layout="fill" className="object-cover object-center"/>
+              <Image src={`/imgSlider/${id}/00.jpg`} layout="fill" className="object-cover object-center"/>
             </div>
             {mobileImages.map((src, idx) => (
               <div className="relative w-[90vw] h-[50vh] flex cursor-pointer snap-center">
