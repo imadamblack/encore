@@ -207,9 +207,12 @@ export default function Home() {
                 </div>
                 <div className="flex-grow md:w-5/6">
                   <p className="font-medium">Desayuno buffet en cortesía</p>
-                  <p className="-ft-2">Un buffet completo en cortesía con menú creado por chef internacional, con
-                    estación
-                    de huevos al gusto de 7:00 a 11:00 am</p>
+                  <p className="-ft-2">{
+                    id === 'slp'
+                      ? 'Desayuno Buffet en cortesía (Amplio, variado, continuo y rotativo). En horario de Lun a Vie 6:00 a 10:30 am y Sab-Dom de 7:00 a 11:30am'
+                      : 'Desayuno Buffet en cortesía (Amplio, variado, continuo y rotativo). En horario de Lun a Vie 6:30 a 10:30 am y Sab-Dom de 7:00 a 11:30am'
+                  }
+                  </p>
                 </div>
               </div>
               <div className="w-full flex flex-col md:flex-row items-center gap-8">
