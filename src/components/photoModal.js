@@ -3,7 +3,6 @@ import Image from 'next/image';
 export default function ModalPhotoGallery({sede, onClose}) {
 
   const images = Array.from({ length: 18 }, (_, i) => `/imgSlider/${sede}/${String(i + 1).padStart(2, '0')}.jpg`);
-  console.log(sede);
 
   return (
     <div className="fixed inset-0 z-[100] bg-white/90 overflow-y-scroll">
