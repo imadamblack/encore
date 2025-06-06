@@ -19,8 +19,8 @@ export default function Home() {
   const [sedeInfo, setSedeInfo] = useState(() => {
     return DataAtlas.find((sede) => sede.id === 'ags');
   });
-  const { openSedeSelector, setOpenSedeSelector } = useSedeSelector();
-  const [openPhotoModal,setOpenPhotoModal] = useState(false)
+  const {openSedeSelector, setOpenSedeSelector} = useSedeSelector();
+  const [openPhotoModal, setOpenPhotoModal] = useState(false);
 
   const handleSedeChange = (sedeId) => {
     const found = DataAtlas.find((sede) => sede.id === sedeId) ||
@@ -72,7 +72,7 @@ export default function Home() {
   } = sedeInfo;
 
   const images = Array.from({length: 4}, (_, i) => `/imgSlider/${id}/0${i + 1}.jpg`);
-  const mobileImages = Array.from({ length: 18 }, (_, i) => `/imgSlider/${id}/${String(i + 1).padStart(2, '0')}.jpg`);
+  const mobileImages = Array.from({length: 18}, (_, i) => `/imgSlider/${id}/${String(i + 1).padStart(2, '0')}.jpg`);
 
   return (
     <>
@@ -82,7 +82,7 @@ export default function Home() {
           onSelect={handleSedeChange}
         />
       )}
-      {openPhotoModal &&  (
+      {openPhotoModal && (
         <ModalPhotoGallery
           sede={sedeInfo?.id}
           onClose={() => setOpenPhotoModal(false)}
@@ -97,7 +97,8 @@ export default function Home() {
           </button>
           <div className="grid grid-cols-2 gap-4">
             <div className="relative flex bg-gray-100 shadow pt-[100%]">
-              <div onClick={() => setOpenPhotoModal(true)} className="absolute inset-0 flex cursor-pointer overflow-hidden">
+              <div onClick={() => setOpenPhotoModal(true)}
+                   className="absolute inset-0 flex cursor-pointer overflow-hidden">
                 <Image src={`/imgSlider/${id}/00.jpg`} layout="fill" className="object-cover object-center"/>
               </div>
             </div>
@@ -217,10 +218,10 @@ export default function Home() {
               </div>
               <div className="w-full flex flex-col md:flex-row items-center gap-8">
                 <div className="w-1/3 md:w-1/6">
-                  <a href="#form">
-                  <div className="relative w-2/3 mx-auto pt-[100%]">
-                    <Image src="/icons/location.png" layout="fill" className="object-center object-contain"/>
-                  </div>
+                  <a href="#map">
+                    <div className="relative w-2/3 mx-auto pt-[100%]">
+                      <Image src="/icons/location.png" layout="fill" className="object-center object-contain"/>
+                    </div>
                   </a>
                 </div>
                 <div className="flex-grow md:w-5/6">
@@ -282,10 +283,10 @@ export default function Home() {
             className="flex w-full lg:w-1/6 bg-brand-5 rounded-lg border border-green-800 shadow-xl h-[4.2rem] px-8 items-center">
             <a href="#form" className="-ft-1 w-full text-white text-center font-medium">Selecciona tus fechas</a>
           </div>
-          </div>
+        </div>
       </section>
 
-      <section className="container border-t py-20">
+      <section id="map" className="container border-t py-20">
         <h2 className="mb-16">Donde vas a estar</h2>
         <Mapa
           ciudad={city}
