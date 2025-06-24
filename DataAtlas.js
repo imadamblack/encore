@@ -48,7 +48,7 @@ Además, cada propiedad integra murales de artistas reconocidos que aportan iden
     sede: 'Aguascalientes',
     description: `Ubicado en el acceso de la carretera 45 proveniente de Guadalajara, Querétaro, CDMX en plena zona industrial denominada FINSA con complejos con vocación a la industria automotriz, siendo la principal NISSAN de México.<br/><br/>Muy cercano al 3er anillo vial de Aguascalientes por lo que se cuenta con muy buena conexión.<br/><br/>Aeropuerto a aprox. 25 minutos.<br/><br/>Aguascalientes posee la feria más tradicional, reconocida y concurrida de México, celebrándose regularmente entre los meses de abril-mayo de cada año.<br/><br/>Ambientado con murales de “Osvaldo Monos” con temática homenaje a la ciudad, feria de San Marcos, fiesta taurina, palenques y Catrinas (José Guadalupe Posada).`,
     url: 'https://www.wyndhamhotels.com/es-xl/ramada/aguascalientes-mexico/ramada-encore-aguascalientes/rooms-rates',
-    whatsapp: '+5214493638137',
+    whatsapp: '+5214491931796',
     street: 'Av. Siglo XXI No. 2001',
     neighborhood: 'Parque Industrial FINSA',
     cp: '20354',
