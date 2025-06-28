@@ -12,6 +12,7 @@ import { useSedeSelector } from '../context/SedeSelectorContext';
 import ModalPhotoGallery from '../components/photoModal';
 
 export default function Home({urlSede}) {
+  console.log('urlSede Comp', urlSede);
   const router = useRouter();
   const {pathname} = router;
   const [sedeInfo, setSedeInfo] = useState(() => {
@@ -335,6 +336,7 @@ export default function Home({urlSede}) {
 
 export async function getServerSideProps(ctx) {
   const urlSede = ctx.query;
+  const sede = urlSede.sede === '' ? 'ags' : urlSede.sede;
 
-  return urlSede && {props: {urlSede}}
+  return urlSede && {props: {urlSede: sede}};
 }
